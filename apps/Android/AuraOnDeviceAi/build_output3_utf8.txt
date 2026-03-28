@@ -1,0 +1,225 @@
+﻿Configuration on demand is an incubating feature.
+
+> Configure project :app
+WARNING: The option 'android.enableD8.desugaring' is deprecated.
+The current default is 'true'.
+It was removed in version 7.0 of the Android Gradle plugin.
+D8 desugaring is used by default, when applicable.
+model-config.json not found, skipping model download
+No model configurations found, skipping download task
+
+> Task :mnn_tts:preBuild UP-TO-DATE
+
+> Task :app:downloadAndUnzipNativeLibs SKIPPED
+-> Checking if native libs exist... [Exists: true]
+
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preGoogleplayDebugBuild UP-TO-DATE
+> Task :mnn_tts:preDebugBuild UP-TO-DATE
+> Task :app:mergeGoogleplayDebugNativeDebugMetadata NO-SOURCE
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :model_downloader:preBuild UP-TO-DATE
+> Task :model_downloader:preDebugBuild UP-TO-DATE
+> Task :mnn_tts:generateDebugResValues UP-TO-DATE
+> Task :model_downloader:mergeDebugJniLibFolders UP-TO-DATE
+> Task :mnn_tts:generateDebugResources UP-TO-DATE
+> Task :model_downloader:mergeDebugNativeLibs NO-SOURCE
+> Task :model_downloader:stripDebugDebugSymbols NO-SOURCE
+> Task :mnn_tts:packageDebugResources UP-TO-DATE
+> Task :model_downloader:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :mnn_tts:parseDebugLocalResources UP-TO-DATE
+> Task :model_downloader:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :model_downloader:generateDebugResValues UP-TO-DATE
+> Task :mnn_tts:generateDebugRFile UP-TO-DATE
+> Task :mnn_tts:writeDebugAarMetadata UP-TO-DATE
+> Task :mnn_tts:extractDeepLinksDebug UP-TO-DATE
+> Task :model_downloader:generateDebugResources UP-TO-DATE
+> Task :mnn_tts:processDebugManifest UP-TO-DATE
+> Task :mnn_tts:compileDebugLibraryResources UP-TO-DATE
+> Task :mnn_tts:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :model_downloader:packageDebugResources UP-TO-DATE
+> Task :mnn_tts:generateDebugBuildConfig UP-TO-DATE
+> Task :model_downloader:parseDebugLocalResources UP-TO-DATE
+> Task :model_downloader:generateDebugRFile UP-TO-DATE
+> Task :model_downloader:compileDebugKotlin UP-TO-DATE
+> Task :mnn_tts:compileDebugKotlin UP-TO-DATE
+> Task :mnn_tts:javaPreCompileDebug UP-TO-DATE
+> Task :model_downloader:extractDebugAnnotations
+> Task :mnn_tts:compileDebugJavaWithJavac UP-TO-DATE
+> Task :model_downloader:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :mnn_tts:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :model_downloader:javaPreCompileDebug UP-TO-DATE
+> Task :mnn_tts:mergeDebugShaders UP-TO-DATE
+> Task :mnn_tts:compileDebugShaders NO-SOURCE
+> Task :mnn_tts:generateDebugAssets UP-TO-DATE
+> Task :mnn_tts:packageDebugAssets UP-TO-DATE
+> Task :mnn_tts:processDebugJavaRes UP-TO-DATE
+> Task :mnn_tts:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :mnn_tts:configureCMakeDebug[arm64-v8a]
+> Task :app:dataBindingMergeDependencyArtifactsGoogleplayDebug UP-TO-DATE
+> Task :app:generateGoogleplayDebugResValues UP-TO-DATE
+> Task :mnn_tts:buildCMakeDebug[arm64-v8a]
+> Task :mnn_tts:mergeDebugJniLibFolders UP-TO-DATE
+> Task :mnn_tts:mergeDebugNativeLibs UP-TO-DATE
+> Task :app:generateGoogleplayDebugResources
+> Task :mnn_tts:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :mnn_tts:stripDebugDebugSymbols UP-TO-DATE
+> Task :mnn_tts:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :mnn_tts:extractDebugAnnotations UP-TO-DATE
+> Task :mnn_tts:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :mnn_tts:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :mnn_tts:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :mnn_tts:prepareDebugArtProfile UP-TO-DATE
+> Task :mnn_tts:prepareLintJarForPublish UP-TO-DATE
+> Task :mnn_tts:mergeDebugJavaResource UP-TO-DATE
+> Task :mnn_tts:syncDebugLibJars UP-TO-DATE
+> Task :mnn_tts:bundleDebugAar UP-TO-DATE
+> Task :mnn_tts:assembleDebug UP-TO-DATE
+> Task :model_downloader:compileDebugJavaWithJavac
+> Task :model_downloader:mergeDebugGeneratedProguardFiles
+
+> Task :model_downloader:mergeDebugConsumerProguardFiles
+Supplied consumer proguard configuration does not exist: C:\Users\rajub\Downloads\MNN\apps\frameworks\model_downloader\android\consumer-rules.pro
+
+> Task :model_downloader:mergeDebugShaders UP-TO-DATE
+> Task :model_downloader:compileDebugShaders NO-SOURCE
+> Task :model_downloader:generateDebugAssets UP-TO-DATE
+> Task :model_downloader:packageDebugAssets UP-TO-DATE
+> Task :model_downloader:prepareDebugArtProfile UP-TO-DATE
+> Task :model_downloader:prepareLintJarForPublish UP-TO-DATE
+> Task :model_downloader:processDebugManifest UP-TO-DATE
+> Task :model_downloader:processDebugJavaRes
+> Task :model_downloader:writeDebugAarMetadata UP-TO-DATE
+> Task :model_downloader:mergeDebugJavaResource
+> Task :model_downloader:syncDebugLibJars
+> Task :model_downloader:bundleDebugAar
+> Task :model_downloader:assembleDebug
+> Task :app:mergeGoogleplayDebugResources
+> Task :app:packageGoogleplayDebugResources
+> Task :app:dataBindingTriggerGoogleplayDebug UP-TO-DATE
+> Task :app:generateGoogleplayDebugBuildConfig UP-TO-DATE
+> Task :app:checkGoogleplayDebugAarMetadata UP-TO-DATE
+> Task :app:mapGoogleplayDebugSourceSetPaths
+> Task :app:createGoogleplayDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksGoogleplayDebug UP-TO-DATE
+> Task :app:parseGoogleplayDebugLocalResources
+> Task :app:processGoogleplayDebugMainManifest
+> Task :app:dataBindingGenBaseClassesGoogleplayDebug
+> Task :app:processGoogleplayDebugManifest
+> Task :app:javaPreCompileGoogleplayDebug UP-TO-DATE
+> Task :app:mergeGoogleplayDebugShaders UP-TO-DATE
+> Task :app:compileGoogleplayDebugShaders NO-SOURCE
+> Task :app:generateGoogleplayDebugAssets UP-TO-DATE
+> Task :app:mergeGoogleplayDebugAssets UP-TO-DATE
+> Task :app:compressGoogleplayDebugAssets UP-TO-DATE
+> Task :app:checkGoogleplayDebugDuplicateClasses UP-TO-DATE
+> Task :app:desugarGoogleplayDebugFileDependencies UP-TO-DATE
+> Task :app:mergeExtDexGoogleplayDebug UP-TO-DATE
+> Task :app:mergeLibDexGoogleplayDebug UP-TO-DATE
+> Task :app:configureCMakeDebug[arm64-v8a]
+> Task :app:buildCMakeDebug[arm64-v8a]
+> Task :app:mergeGoogleplayDebugJniLibFolders UP-TO-DATE
+> Task :app:validateSigningGoogleplayDebug UP-TO-DATE
+> Task :app:writeGoogleplayDebugAppMetadata UP-TO-DATE
+> Task :app:writeGoogleplayDebugSigningConfigVersions UP-TO-DATE
+> Task :app:preStandardDebugBuild UP-TO-DATE
+> Task :app:mergeStandardDebugNativeDebugMetadata NO-SOURCE
+> Task :app:generateStandardDebugResValues FROM-CACHE
+> Task :app:dataBindingMergeDependencyArtifactsStandardDebug
+> Task :app:generateStandardDebugResources
+> Task :app:mergeGoogleplayDebugNativeLibs
+> Task :app:stripGoogleplayDebugDebugSymbols
+> Task :app:mergeStandardDebugResources
+> Task :app:packageStandardDebugResources
+> Task :app:parseStandardDebugLocalResources FROM-CACHE
+> Task :app:dataBindingGenBaseClassesStandardDebug FROM-CACHE
+> Task :app:dataBindingTriggerStandardDebug
+> Task :app:generateStandardDebugBuildConfig
+> Task :app:mapStandardDebugSourceSetPaths
+> Task :app:createStandardDebugCompatibleScreenManifests
+> Task :app:extractDeepLinksStandardDebug FROM-CACHE
+> Task :app:checkStandardDebugAarMetadata
+> Task :app:processStandardDebugMainManifest
+> Task :app:processStandardDebugManifest
+> Task :app:javaPreCompileStandardDebug FROM-CACHE
+> Task :app:mergeStandardDebugShaders
+> Task :app:compileStandardDebugShaders NO-SOURCE
+> Task :app:generateStandardDebugAssets UP-TO-DATE
+> Task :app:mergeStandardDebugAssets
+> Task :app:compressStandardDebugAssets FROM-CACHE
+> Task :app:desugarStandardDebugFileDependencies FROM-CACHE
+> Task :app:mergeStandardDebugJniLibFolders
+> Task :app:validateSigningStandardDebug
+> Task :app:writeStandardDebugAppMetadata
+> Task :app:writeStandardDebugSigningConfigVersions
+> Task :app:processGoogleplayDebugManifestForPackage
+> Task :app:checkStandardDebugDuplicateClasses
+> Task :app:mergeStandardDebugNativeLibs
+> Task :app:mergeExtDexStandardDebug FROM-CACHE
+> Task :app:mergeLibDexStandardDebug FROM-CACHE
+> Task :app:processStandardDebugManifestForPackage
+> Task :app:stripStandardDebugDebugSymbols
+> Task :app:processStandardDebugResources FAILED
+> Task :app:processGoogleplayDebugResources FAILED
+.\gradlew : 
+At line:1 char:1
++ .\gradlew assembleDebug > build_output3.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [] 
+   , RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+FAILURE: Build completed with 2 failures.
+
+1: Task failed with an exception.
+-----------
+* What went wrong:
+Execution failed for task 
+':app:processStandardDebugResources'.
+> A failure occurred while executing com.android.build.gr
+adle.internal.res.LinkApplicationAndroidResourcesTask$Tas
+kAction
+   > Android resource linking failed
+     com.aura_on_device_ai.app-mergeStandardDebugResource
+s-76:/layout/fragment_capture.xml:47: error: resource 
+array/model_list (aka 
+com.aura_on_device_ai:array/model_list) not found.
+     error: failed linking file resources.
+
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log 
+output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+=========================================================
+=====================
+
+2: Task failed with an exception.
+-----------
+* What went wrong:
+Execution failed for task 
+':app:processGoogleplayDebugResources'.
+> A failure occurred while executing com.android.build.gr
+adle.internal.res.LinkApplicationAndroidResourcesTask$Tas
+kAction
+   > Android resource linking failed
+     com.aura_on_device_ai.app-mergeGoogleplayDebugResour
+ces-76:/layout/fragment_capture.xml:47: error: resource 
+array/model_list (aka 
+com.aura_on_device_ai:array/model_list) not found.
+     error: failed linking file resources.
+
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log 
+output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+=========================================================
+=====================
+
+BUILD FAILED in 42s
+122 actionable tasks: 46 executed, 9 from cache, 67 up-to-date

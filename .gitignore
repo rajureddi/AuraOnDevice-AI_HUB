@@ -1,0 +1,8 @@
+build/
+.gradle/
+*.apk
+*.dex
+*.bin
+*.tflite
+*.pt
+*.h5

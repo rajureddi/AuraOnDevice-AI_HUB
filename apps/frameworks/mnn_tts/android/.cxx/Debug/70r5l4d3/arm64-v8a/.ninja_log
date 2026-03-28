@@ -1,0 +1,21 @@
+# ninja log v5
+111	3801	7963331382775305	CMakeFiles/mnn_tts.dir/src/mnn_tts_logger.cpp.o	7aab1655a38d3735
+1	8631	7963331430875548	CMakeFiles/mnn_tts.dir/src/bertvits2/an_to_cn.cpp.o	8bffd46bdb061bca
+121	10110	7963331445031652	CMakeFiles/mnn_tts.dir/src/bertvits2/tone_adjuster.cpp.o	9a86812a2be8271f
+92	10419	7963331447742691	CMakeFiles/mnn_tts.dir/src/bertvits2/chinese_bert.cpp.o	ad2f2755e59b363a
+64	10591	7963331449730047	CMakeFiles/mnn_tts.dir/src/bertvits2/mnn_bertvits2_tts_impl.cpp.o	1ac7dbbbf4aed46d
+75	11612	7963331460742053	CMakeFiles/mnn_tts.dir/src/bertvits2/text_preprocessor.cpp.o	ab764ba2cbf9e78d
+26	13046	7963331474842022	CMakeFiles/mnn_tts.dir/src/bertvits2/pinyin.cpp.o	43c9a4575c4936d1
+83	13085	7963331474562079	CMakeFiles/mnn_tts.dir/src/bertvits2/chinese_g2p.cpp.o	4bc7a3732e254b0a
+102	14046	7963331482953815	CMakeFiles/mnn_tts.dir/src/bertvits2/english_g2p.cpp.o	90b41dec6080558f
+3811	14802	7963331492393246	CMakeFiles/mnn_tts.dir/src/bertvits2/english_bert.cpp.o	247c5a21a703d277
+10111	17680	7963331521436266	CMakeFiles/mnn_tts.dir/src/bertvits2/tts_generator.cpp.o	f50bf4d2588d2149
+10420	18086	7963331525460493	CMakeFiles/mnn_tts.dir/src/mnn_tts_config.cpp.o	17b1f5d0572cdf38
+13047	20322	7963331548108344	CMakeFiles/mnn_tts.dir/src/android/tts_service_jni.cpp.o	6008d0d7dd01478f
+11	20585	7963331547927304	CMakeFiles/mnn_tts.dir/src/bertvits2/utils.cpp.o	fd7cf30c7bc0e9fc
+13085	20708	7963331549840583	CMakeFiles/mnn_tts.dir/src/android/tts_service.cpp.o	c7581cb4e7aeab23
+10592	21858	7963331562027574	CMakeFiles/mnn_tts.dir/src/mnn_tts_sdk.cpp.o	29ffb04ce0aff70d
+8633	23379	7963331575190820	CMakeFiles/mnn_tts.dir/src/bertvits2/word_spliter.cpp.o	1bb02129424be0b3
+11612	32855	7963331670568198	CMakeFiles/mnn_tts.dir/src/supertonic/mnn_supertonic_tts_impl.cpp.o	3dc45a02d1b4421c
+32860	35585	7963331698659067	../../../../build/intermediates/cxx/Debug/70r5l4d3/obj/arm64-v8a/libmnn_tts.so	5fa74b363432329f
+28	1141	7963337426151281	../../../../build/intermediates/cxx/Debug/70r5l4d3/obj/arm64-v8a/libmnn_tts.so	5fa74b363432329f

@@ -1,0 +1,547 @@
+﻿Configuration on demand is an incubating feature.
+
+> Configure project :app
+WARNING: The option 'android.enableD8.desugaring' is deprecated.
+The current default is 'true'.
+It was removed in version 7.0 of the Android Gradle plugin.
+D8 desugaring is used by default, when applicable.
+model-config.json not found, skipping model download
+No model configurations found, skipping download task
+
+> Task :model_downloader:preBuild UP-TO-DATE
+
+> Task :app:downloadAndUnzipNativeLibs SKIPPED
+-> Checking if native libs exist... [Exists: true]
+
+> Task :app:preBuild UP-TO-DATE
+> Task :mnn_tts:preBuild UP-TO-DATE
+> Task :app:preGoogleplayDebugBuild UP-TO-DATE
+> Task :mnn_tts:preDebugBuild UP-TO-DATE
+> Task :app:mergeGoogleplayDebugNativeDebugMetadata NO-SOURCE
+> Task :mnn_tts:generateDebugResValues UP-TO-DATE
+> Task :model_downloader:preDebugBuild UP-TO-DATE
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :mnn_tts:generateDebugResources UP-TO-DATE
+> Task :model_downloader:mergeDebugJniLibFolders UP-TO-DATE
+> Task :model_downloader:mergeDebugNativeLibs NO-SOURCE
+> Task :model_downloader:stripDebugDebugSymbols NO-SOURCE
+> Task :mnn_tts:packageDebugResources UP-TO-DATE
+> Task :model_downloader:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :model_downloader:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :model_downloader:generateDebugResValues UP-TO-DATE
+> Task :mnn_tts:parseDebugLocalResources UP-TO-DATE
+> Task :model_downloader:generateDebugResources UP-TO-DATE
+> Task :mnn_tts:generateDebugRFile UP-TO-DATE
+> Task :mnn_tts:writeDebugAarMetadata UP-TO-DATE
+> Task :mnn_tts:extractDeepLinksDebug UP-TO-DATE
+> Task :model_downloader:packageDebugResources UP-TO-DATE
+> Task :mnn_tts:processDebugManifest UP-TO-DATE
+> Task :model_downloader:parseDebugLocalResources UP-TO-DATE
+> Task :mnn_tts:compileDebugLibraryResources UP-TO-DATE
+> Task :mnn_tts:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :model_downloader:generateDebugRFile UP-TO-DATE
+> Task :mnn_tts:generateDebugBuildConfig UP-TO-DATE
+> Task :mnn_tts:compileDebugKotlin UP-TO-DATE
+> Task :mnn_tts:javaPreCompileDebug UP-TO-DATE
+> Task :model_downloader:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :model_downloader:javaPreCompileDebug UP-TO-DATE
+> Task :model_downloader:mergeDebugShaders UP-TO-DATE
+> Task :model_downloader:compileDebugShaders NO-SOURCE
+> Task :model_downloader:generateDebugAssets UP-TO-DATE
+> Task :model_downloader:packageDebugAssets UP-TO-DATE
+> Task :model_downloader:prepareDebugArtProfile UP-TO-DATE
+> Task :model_downloader:prepareLintJarForPublish UP-TO-DATE
+> Task :model_downloader:processDebugManifest UP-TO-DATE
+> Task :model_downloader:writeDebugAarMetadata UP-TO-DATE
+> Task :app:dataBindingMergeDependencyArtifactsGoogleplayDebug UP-TO-DATE
+> Task :app:generateGoogleplayDebugResValues UP-TO-DATE
+> Task :app:generateGoogleplayDebugResources UP-TO-DATE
+> Task :mnn_tts:compileDebugJavaWithJavac
+> Task :mnn_tts:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :mnn_tts:mergeDebugShaders UP-TO-DATE
+> Task :mnn_tts:compileDebugShaders NO-SOURCE
+> Task :mnn_tts:generateDebugAssets UP-TO-DATE
+> Task :mnn_tts:packageDebugAssets UP-TO-DATE
+> Task :mnn_tts:processDebugJavaRes UP-TO-DATE
+> Task :mnn_tts:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :mnn_tts:configureCMakeDebug[arm64-v8a]
+> Task :mnn_tts:buildCMakeDebug[arm64-v8a]
+> Task :mnn_tts:mergeDebugJniLibFolders UP-TO-DATE
+> Task :mnn_tts:mergeDebugNativeLibs UP-TO-DATE
+> Task :mnn_tts:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :mnn_tts:stripDebugDebugSymbols UP-TO-DATE
+> Task :mnn_tts:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :mnn_tts:extractDebugAnnotations
+> Task :mnn_tts:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :mnn_tts:mergeDebugGeneratedProguardFiles
+
+> Task :mnn_tts:mergeDebugConsumerProguardFiles
+Supplied consumer proguard configuration does not exist: C:\Users\rajub\Downloads\MNN\apps\frameworks\mnn_tts\android\proguard-rules.pro
+
+> Task :mnn_tts:prepareDebugArtProfile UP-TO-DATE
+> Task :mnn_tts:prepareLintJarForPublish UP-TO-DATE
+> Task :mnn_tts:mergeDebugJavaResource
+> Task :mnn_tts:syncDebugLibJars
+> Task :mnn_tts:bundleDebugAar
+> Task :mnn_tts:assembleDebug
+
+> Task :app:mergeGoogleplayDebugResources FAILED
+.\gradlew : ERROR: [drawable/ic_u_home] C:\Users\rajub\Do
+wnloads\MNN\apps\Android\MnnLlmChat\app\src\main\res\draw
+able\ic_u_home.xml [drawable/ic_u_home] C:\Users\rajub\Do
+wnloads\MNN\apps\Android\MnnLlmChat\app\src\main\res-icon
+s\drawable\ic_u_home.xml: Resource and asset merger: 
+Duplicate resources
+At line:1 char:1
++ .\gradlew assembleDebug > build_output.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (ERROR: [dra 
+   wabl...icate resources:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+ERROR: [drawable/ic_u_market] C:\Users\rajub\Downloads\MN
+N\apps\Android\MnnLlmChat\app\src\main\res\drawable\ic_u_
+market.xml [drawable/ic_u_market] C:\Users\rajub\Download
+s\MNN\apps\Android\MnnLlmChat\app\src\main\res-icons\draw
+able\ic_u_market.xml: Resource and asset merger: 
+Duplicate resources
+
+> Task :model_downloader:compileDebugKotlin FAILED
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/alibaba/mls/api
+/ApplicationProvider.kt:7:8 Redeclaration:
+object ApplicationProvider : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/alibaba/mls/api
+/FileDownloadException.kt:5:7 Redeclaration:
+class FileDownloadException : Exception
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/alibaba/mls/api
+/HfApiClient.kt:15:7 Redeclaration:
+class HfApiClient : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/alibaba/mls/api
+/HfApiException.kt:5:7 Redeclaration:
+class HfApiException : Exception
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/alibaba/mls/api
+/HfApiService.kt:13:11 Redeclaration:
+interface HfApiService : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/alibaba/mls/api
+/HfFileMetadata.kt:5:7 Redeclaration:
+class HfFileMetadata : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/alibaba/mls/api
+/HfRepoInfo.kt:5:7 Redeclaration:
+class HfRepoInfo : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/alibaba/mls/api
+/ModelItem.kt:8:12 Redeclaration:
+data class ModelItem : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/alibaba/mls/api
+/download/DownloadExecutor.kt:16:7 Redeclaration:
+class DownloadExecutor : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/alibaba/mls/api
+/download/DownloadFileUtils.kt:16:8 Redeclaration:
+object DownloadFileUtils : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/alibaba/mls/api
+/download/DownloadInfo.kt:5:12 Redeclaration:
+data class DownloadInfo : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/alibaba/mls/api
+/download/DownloadListener.kt:5:11 Redeclaration:
+interface DownloadListener : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/alibaba/mls/api
+/download/DownloadPausedException.kt:6:7 Redeclaration:
+class DownloadPausedException : Exception
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/alibaba/mls/api
+/download/DownloadPersistentData.kt:25:8 Redeclaration:
+object DownloadPersistentData : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/alibaba/mls/api
+/download/DownloadState.kt:8:8 Redeclaration:
+object DownloadState : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/alibaba/mls/api
+/download/FileDownloadTask.kt:8:7 Redeclaration:
+class FileDownloadTask : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/alibaba/mls/api
+/download/FileUtils.kt:5:8 Redeclaration:
+object FileUtils : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/alibaba/mls/api
+/download/ModelDownloadManager.kt:17:7 Redeclaration:
+class ModelDownloadManager : 
+ModelRepoDownloader.ModelRepoDownloadCallback
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/alibaba/mls/api
+/download/ModelFileDownloader.kt:18:7 Redeclaration:
+class ModelFileDownloader : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/alibaba/mls/api
+/download/ModelIdUtils.kt:8:8 Redeclaration:
+object ModelIdUtils : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/alibaba/mls/api
+/download/ModelNameUtils.kt:3:8 Redeclaration:
+object ModelNameUtils : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/alibaba/mls/api
+/download/ModelRepoDownloader.kt:11:16 Redeclaration:
+class ModelRepoDownloader : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/alibaba/mls/api
+/download/RepoDownloadSate.kt:8:12 Redeclaration:
+data class RepoDownloadSate : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/alibaba/mls/api
+/download/TimeUtils.kt:7:8 Redeclaration:
+object TimeUtils : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/alibaba/mls/api
+/download/hf/HfFileMetadataUtils.kt:11:8 Redeclaration:
+object HfFileMetadataUtils : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/alibaba/mls/api
+/download/hf/HfModelDownloader.kt:33:7 Redeclaration:
+class HfModelDownloader : ModelRepoDownloader
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/alibaba/mls/api
+/download/hf/HfShaVerifier.kt:16:8 Redeclaration:
+object HfShaVerifier : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/alibaba/mls/api
+/download/ml/MLModelDownloader.kt:31:7 Redeclaration:
+class MLModelDownloader : ModelRepoDownloader
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/alibaba/mls/api
+/download/ms/MsModelDownloader.kt:31:7 Redeclaration:
+class MsModelDownloader : ModelRepoDownloader
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/alibaba/mls/api
+/ml/MlApiClient.kt:16:7 Redeclaration:
+class MlApiClient : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/alibaba/mls/api
+/ml/MlRepoInfo.kt:6:12 Redeclaration:
+data class MlRepoInfo : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/alibaba/mls/api
+/ml/MlRepoInfo.kt:12:12 Redeclaration:
+data class MlRepoData : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/alibaba/mls/api
+/ml/MlRepoInfo.kt:18:12 Redeclaration:
+data class FileInfo : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/alibaba/mls/api
+/ml/MlRepoInfo.kt:30:12 Redeclaration:
+data class CommitInfo : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/alibaba/mls/api
+/ml/MlRepoInfo.kt:37:12 Redeclaration:
+data class FileScanInfo : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/alibaba/mls/api
+/ml/MlRepoInfo.kt:45:12 Redeclaration:
+data class LastCommitInfo : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/alibaba/mls/api
+/ml/MlRepoInfo.kt:50:12 Redeclaration:
+data class AuthorInfo : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/alibaba/mls/api
+/ms/MsApiClient.kt:11:7 Redeclaration:
+class MsApiClient : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/alibaba/mls/api
+/source/ModelSourceConfig.kt:5:7 Redeclaration:
+class ModelSourceConfig : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/alibaba/mls/api
+/source/ModelSources.kt:7:7 Redeclaration:
+class ModelSources : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/alibaba/mls/api
+/source/RepoConfig.kt:6:7 Redeclaration:
+class RepoConfig : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/ApplicationProvider.kt:7:8 Redeclaration:
+object ApplicationProvider : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/FileDownloadException.kt:5:7 Redeclaration:
+class FileDownloadException : Exception
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/HfApiClient.kt:15:7 Redeclaration:
+class HfApiClient : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/HfApiClient.kt:16:13 Property must be initialized or 
+be abstract.
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/HfApiClient.kt:40:27 Unresolved reference 
+'getRepoInfo'.
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/HfApiException.kt:5:7 Redeclaration:
+class HfApiException : Exception
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/HfApiService.kt:13:11 Redeclaration:
+interface HfApiService : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/HfFileMetadata.kt:5:7 Redeclaration:
+class HfFileMetadata : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/HfRepoInfo.kt:7:7 Redeclaration:
+class HfRepoInfo : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/ModelItem.kt:8:12 Redeclaration:
+data class ModelItem : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/download/DownloadExecutor.kt:16:7 Redeclaration:
+class DownloadExecutor : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/download/DownloadFileUtils.kt:14:8 Redeclaration:
+object DownloadFileUtils : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/download/DownloadInfo.kt:5:12 Redeclaration:
+data class DownloadInfo : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/download/DownloadListener.kt:5:11 Redeclaration:
+interface DownloadListener : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/download/DownloadPausedException.kt:6:7 Redeclaration:
+class DownloadPausedException : Exception
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/download/DownloadPersistentData.kt:24:8 Redeclaration:
+object DownloadPersistentData : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/download/DownloadState.kt:8:8 Redeclaration:
+object DownloadState : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/download/FileDownloadTask.kt:8:7 Redeclaration:
+class FileDownloadTask : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/download/FileUtils.kt:5:8 Redeclaration:
+object FileUtils : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/download/ModelDownloadManager.kt:15:7 Redeclaration:
+class ModelDownloadManager : 
+ModelRepoDownloader.ModelRepoDownloadCallback
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/download/ModelDownloadManager.kt:18:13 Property must 
+be initialized or be abstract.
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/download/ModelDownloadManager.kt:19:13 Property must 
+be initialized or be abstract.
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/download/ModelFileDownloader.kt:18:7 Redeclaration:
+class ModelFileDownloader : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/download/ModelIdUtils.kt:8:8 Redeclaration:
+object ModelIdUtils : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/download/ModelNameUtils.kt:3:8 Redeclaration:
+object ModelNameUtils : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/download/ModelRepoDownloader.kt:10:16 Redeclaration:
+class ModelRepoDownloader : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/download/RepoDownloadSate.kt:8:12 Redeclaration:
+data class RepoDownloadSate : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/download/TimeUtils.kt:7:8 Redeclaration:
+object TimeUtils : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/download/hf/HfFileMetadataUtils.kt:11:8 Redeclaration:
+object HfFileMetadataUtils : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/download/hf/HfModelDownloader.kt:32:7 Redeclaration:
+class HfModelDownloader : ModelRepoDownloader
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/download/hf/HfModelDownloader.kt:79:49 Unresolved 
+reference 'getRepoInfo'.
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/download/hf/HfModelDownloader.kt:80:64 Unresolved 
+reference 'body'.
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/download/hf/HfModelDownloader.kt:81:45 Unresolved 
+reference 'body'.
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/download/hf/HfModelDownloader.kt:93:66 Unresolved 
+reference 'code'.
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/download/hf/HfModelDownloader.kt:93:86 Unresolved 
+reference 'message'.
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/download/hf/HfModelDownloader.kt:246:30 Cannot access 
+'val siblings: MutableList<HfRepoInfo.SiblingItem>': it 
+is private in 'com/alibaba/mls/api/HfRepoInfo'.
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/download/hf/HfModelDownloader.kt:247:38 Cannot access 
+'val siblings: MutableList<HfRepoInfo.SiblingItem>': it 
+is private in 'com/alibaba/mls/api/HfRepoInfo'.
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/download/hf/HfModelDownloader.kt:273:36 Cannot access 
+'val siblings: MutableList<HfRepoInfo.SiblingItem>': it 
+is private in 'com/alibaba/mls/api/HfRepoInfo'.
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/download/hf/HfShaVerifier.kt:16:8 Redeclaration:
+object HfShaVerifier : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/download/ml/MLModelDownloader.kt:30:7 Redeclaration:
+class MLModelDownloader : ModelRepoDownloader
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/download/ms/MsModelDownloader.kt:27:7 Redeclaration:
+class MsModelDownloader : ModelRepoDownloader
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/ml/MlApiClient.kt:16:7 Redeclaration:
+class MlApiClient : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/ml/MlApiClient.kt:20:5 Property must be initialized 
+or be abstract.
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/ml/MlRepoInfo.kt:6:12 Redeclaration:
+data class MlRepoInfo : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/ml/MlRepoInfo.kt:12:12 Redeclaration:
+data class MlRepoData : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/ml/MlRepoInfo.kt:18:12 Redeclaration:
+data class FileInfo : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/ml/MlRepoInfo.kt:30:12 Redeclaration:
+data class CommitInfo : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/ml/MlRepoInfo.kt:37:12 Redeclaration:
+data class FileScanInfo : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/ml/MlRepoInfo.kt:45:12 Redeclaration:
+data class LastCommitInfo : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/ml/MlRepoInfo.kt:50:12 Redeclaration:
+data class AuthorInfo : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/ms/MsApiClient.kt:11:7 Redeclaration:
+class MsApiClient : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/ms/MsApiClient.kt:16:5 Property must be initialized 
+or be abstract.
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/source/ModelSourceConfig.kt:5:7 Redeclaration:
+class ModelSourceConfig : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/source/ModelSources.kt:7:7 Redeclaration:
+class ModelSources : Any
+e: file:///C:/Users/rajub/Downloads/MNN/apps/frameworks/m
+odel_downloader/android/src/main/java/com/localmind/mls/a
+pi/source/RepoConfig.kt:6:7 Redeclaration:
+class RepoConfig : Any
+
+FAILURE: Build completed with 2 failures.
+
+1: Task failed with an exception.
+-----------
+* What went wrong:
+Execution failed for task 
+':app:mergeGoogleplayDebugResources'.
+> [drawable/ic_u_home] C:\Users\rajub\Downloads\MNN\apps\
+Android\MnnLlmChat\app\src\main\res\drawable\ic_u_home.xm
+l	[drawable/ic_u_home] C:\Users\rajub\Downloads\MNN\apps\
+Android\MnnLlmChat\app\src\main\res-icons\drawable\ic_u_h
+ome.xml: Error: Duplicate resources
+  [drawable/ic_u_market] C:\Users\rajub\Downloads\MNN\app
+s\Android\MnnLlmChat\app\src\main\res\drawable\ic_u_marke
+t.xml	[drawable/ic_u_market] C:\Users\rajub\Downloads\MNN
+\apps\Android\MnnLlmChat\app\src\main\res-icons\drawable\
+ic_u_market.xml: Error: Duplicate resources
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log 
+output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+=========================================================
+=====================
+
+2: Task failed with an exception.
+-----------
+* What went wrong:
+Execution failed for task 
+':model_downloader:compileDebugKotlin'.
+> A failure occurred while executing org.jetbrains.kotlin
+.compilerRunner.GradleCompilerRunnerWithWorkers$GradleKot
+linCompilerWorkAction
+   > Compilation error. See log for more details
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log 
+output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+=========================================================
+=====================
+
+BUILD FAILED in 9s
+54 actionable tasks: 11 executed, 43 up-to-date

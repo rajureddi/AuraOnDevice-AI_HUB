@@ -1,0 +1,3 @@
+C:/Users/rajub/Downloads/MNN/apps/frameworks/mnn_tts/android/.cxx/RelWithDebInfo/56283951/arm64-v8a/CMakeFiles/mnn_tts.dir
+C:/Users/rajub/Downloads/MNN/apps/frameworks/mnn_tts/android/.cxx/RelWithDebInfo/56283951/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/rajub/Downloads/MNN/apps/frameworks/mnn_tts/android/.cxx/RelWithDebInfo/56283951/arm64-v8a/CMakeFiles/rebuild_cache.dir

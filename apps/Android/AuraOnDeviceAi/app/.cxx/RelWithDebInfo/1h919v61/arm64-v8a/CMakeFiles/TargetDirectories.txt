@@ -1,0 +1,3 @@
+C:/Users/rajub/Desktop/Learning/FastApi/PocketLLM/apps/Android/MnnLlmChat/app/.cxx/RelWithDebInfo/1h919v61/arm64-v8a/CMakeFiles/mnnllmapp.dir
+C:/Users/rajub/Desktop/Learning/FastApi/PocketLLM/apps/Android/MnnLlmChat/app/.cxx/RelWithDebInfo/1h919v61/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/rajub/Desktop/Learning/FastApi/PocketLLM/apps/Android/MnnLlmChat/app/.cxx/RelWithDebInfo/1h919v61/arm64-v8a/CMakeFiles/rebuild_cache.dir

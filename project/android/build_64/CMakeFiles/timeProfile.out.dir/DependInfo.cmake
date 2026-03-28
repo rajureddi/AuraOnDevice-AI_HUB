@@ -1,0 +1,25 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
+# The set of languages for which implicit dependencies are needed:
+set(CMAKE_DEPENDS_LANGUAGES
+  )
+
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/rajub/MNN/tools/cpp/Profiler.cpp" "CMakeFiles/timeProfile.out.dir/tools/cpp/Profiler.cpp.o" "gcc" "CMakeFiles/timeProfile.out.dir/tools/cpp/Profiler.cpp.o.d"
+  "/home/rajub/MNN/tools/cpp/revertMNNModel.cpp" "CMakeFiles/timeProfile.out.dir/tools/cpp/revertMNNModel.cpp.o" "gcc" "CMakeFiles/timeProfile.out.dir/tools/cpp/revertMNNModel.cpp.o.d"
+  "/home/rajub/MNN/tools/cpp/timeProfile.cpp" "CMakeFiles/timeProfile.out.dir/tools/cpp/timeProfile.cpp.o" "gcc" "CMakeFiles/timeProfile.out.dir/tools/cpp/timeProfile.cpp.o.d"
+  )
+
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
+  )
+
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_FORWARD_LINKED_INFO_FILES
+  )
+
+# Fortran module output directory.
+set(CMAKE_Fortran_TARGET_MODULE_DIR "")

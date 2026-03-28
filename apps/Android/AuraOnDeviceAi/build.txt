@@ -1,0 +1,276 @@
+﻿Configuration on demand is an incubating feature.
+
+> Configure project :app
+WARNING: The option 'android.enableD8.desugaring' is deprecated.
+The current default is 'true'.
+It was removed in version 7.0 of the Android Gradle plugin.
+D8 desugaring is used by default, when applicable.
+model-config.json not found, skipping model download
+No model configurations found, skipping download task
+
+> Task :model_downloader:preBuild UP-TO-DATE
+> Task :model_downloader:preDebugBuild UP-TO-DATE
+
+> Task :app:downloadAndUnzipNativeLibs SKIPPED
+-> Checking if native libs exist... [Exists: true]
+
+> Task :mnn_tts:preBuild UP-TO-DATE
+> Task :app:preBuild UP-TO-DATE
+> Task :mnn_tts:preDebugBuild UP-TO-DATE
+> Task :app:preGoogleplayDebugBuild UP-TO-DATE
+> Task :app:mergeGoogleplayDebugNativeDebugMetadata NO-SOURCE
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :model_downloader:generateDebugResValues UP-TO-DATE
+> Task :mnn_tts:generateDebugResValues UP-TO-DATE
+> Task :mnn_tts:generateDebugResources UP-TO-DATE
+> Task :model_downloader:generateDebugResources UP-TO-DATE
+> Task :mnn_tts:packageDebugResources UP-TO-DATE
+> Task :model_downloader:packageDebugResources UP-TO-DATE
+> Task :mnn_tts:parseDebugLocalResources UP-TO-DATE
+> Task :model_downloader:parseDebugLocalResources UP-TO-DATE
+> Task :mnn_tts:generateDebugRFile UP-TO-DATE
+> Task :mnn_tts:writeDebugAarMetadata UP-TO-DATE
+> Task :model_downloader:generateDebugRFile UP-TO-DATE
+> Task :model_downloader:writeDebugAarMetadata UP-TO-DATE
+> Task :mnn_tts:extractDeepLinksDebug UP-TO-DATE
+> Task :model_downloader:extractDeepLinksDebug UP-TO-DATE
+> Task :mnn_tts:processDebugManifest UP-TO-DATE
+> Task :model_downloader:processDebugManifest UP-TO-DATE
+> Task :mnn_tts:compileDebugLibraryResources UP-TO-DATE
+> Task :mnn_tts:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :model_downloader:compileDebugLibraryResources UP-TO-DATE
+> Task :model_downloader:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :mnn_tts:generateDebugBuildConfig UP-TO-DATE
+> Task :model_downloader:compileDebugKotlin UP-TO-DATE
+> Task :model_downloader:javaPreCompileDebug UP-TO-DATE
+> Task :model_downloader:compileDebugJavaWithJavac UP-TO-DATE
+> Task :app:dataBindingMergeDependencyArtifactsGoogleplayDebug UP-TO-DATE
+> Task :app:generateGoogleplayDebugResValues UP-TO-DATE
+> Task :model_downloader:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :app:generateGoogleplayDebugResources UP-TO-DATE
+> Task :model_downloader:mergeDebugShaders UP-TO-DATE
+> Task :model_downloader:compileDebugShaders NO-SOURCE
+> Task :model_downloader:generateDebugAssets UP-TO-DATE
+> Task :model_downloader:packageDebugAssets UP-TO-DATE
+> Task :model_downloader:processDebugJavaRes UP-TO-DATE
+> Task :model_downloader:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :mnn_tts:compileDebugKotlin UP-TO-DATE
+> Task :model_downloader:mergeDebugJniLibFolders UP-TO-DATE
+> Task :model_downloader:mergeDebugNativeLibs NO-SOURCE
+> Task :mnn_tts:javaPreCompileDebug UP-TO-DATE
+> Task :model_downloader:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :model_downloader:stripDebugDebugSymbols NO-SOURCE
+> Task :model_downloader:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :mnn_tts:compileDebugJavaWithJavac UP-TO-DATE
+> Task :mnn_tts:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :mnn_tts:mergeDebugShaders UP-TO-DATE
+> Task :mnn_tts:compileDebugShaders NO-SOURCE
+> Task :mnn_tts:generateDebugAssets UP-TO-DATE
+> Task :mnn_tts:packageDebugAssets UP-TO-DATE
+> Task :app:mergeGoogleplayDebugResources UP-TO-DATE
+> Task :model_downloader:extractDebugAnnotations UP-TO-DATE
+> Task :model_downloader:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :mnn_tts:processDebugJavaRes UP-TO-DATE
+> Task :app:packageGoogleplayDebugResources UP-TO-DATE
+> Task :model_downloader:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :model_downloader:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :app:parseGoogleplayDebugLocalResources UP-TO-DATE
+> Task :model_downloader:prepareDebugArtProfile UP-TO-DATE
+> Task :model_downloader:prepareLintJarForPublish UP-TO-DATE
+> Task :model_downloader:mergeDebugJavaResource UP-TO-DATE
+> Task :app:dataBindingGenBaseClassesGoogleplayDebug UP-TO-DATE
+> Task :mnn_tts:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :model_downloader:syncDebugLibJars UP-TO-DATE
+> Task :app:generateGoogleplayDebugBuildConfig UP-TO-DATE
+> Task :model_downloader:bundleDebugAar UP-TO-DATE
+> Task :model_downloader:assembleDebug UP-TO-DATE
+> Task :app:checkGoogleplayDebugAarMetadata UP-TO-DATE
+> Task :app:mapGoogleplayDebugSourceSetPaths UP-TO-DATE
+> Task :app:createGoogleplayDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksGoogleplayDebug UP-TO-DATE
+> Task :app:processGoogleplayDebugMainManifest UP-TO-DATE
+> Task :app:processGoogleplayDebugManifest UP-TO-DATE
+> Task :app:processGoogleplayDebugManifestForPackage UP-TO-DATE
+> Task :mnn_tts:configureCMakeDebug[arm64-v8a]
+> Task :app:processGoogleplayDebugResources UP-TO-DATE
+> Task :mnn_tts:buildCMakeDebug[arm64-v8a]
+> Task :mnn_tts:mergeDebugJniLibFolders UP-TO-DATE
+> Task :mnn_tts:mergeDebugNativeLibs UP-TO-DATE
+> Task :mnn_tts:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :mnn_tts:stripDebugDebugSymbols UP-TO-DATE
+> Task :mnn_tts:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :mnn_tts:extractDebugAnnotations UP-TO-DATE
+> Task :mnn_tts:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :mnn_tts:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :mnn_tts:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :mnn_tts:prepareDebugArtProfile UP-TO-DATE
+> Task :mnn_tts:prepareLintJarForPublish UP-TO-DATE
+> Task :mnn_tts:mergeDebugJavaResource UP-TO-DATE
+> Task :mnn_tts:syncDebugLibJars UP-TO-DATE
+> Task :mnn_tts:bundleDebugAar UP-TO-DATE
+> Task :mnn_tts:assembleDebug UP-TO-DATE
+> Task :app:javaPreCompileGoogleplayDebug UP-TO-DATE
+> Task :app:mergeGoogleplayDebugShaders UP-TO-DATE
+> Task :app:compileGoogleplayDebugShaders NO-SOURCE
+> Task :app:generateGoogleplayDebugAssets UP-TO-DATE
+> Task :app:mergeGoogleplayDebugAssets UP-TO-DATE
+> Task :app:compressGoogleplayDebugAssets UP-TO-DATE
+> Task :app:checkGoogleplayDebugDuplicateClasses UP-TO-DATE
+> Task :app:desugarGoogleplayDebugFileDependencies UP-TO-DATE
+> Task :app:mergeExtDexGoogleplayDebug UP-TO-DATE
+> Task :app:mergeLibDexGoogleplayDebug UP-TO-DATE
+> Task :app:configureCMakeDebug[arm64-v8a]
+> Task :app:buildCMakeDebug[arm64-v8a]
+> Task :app:mergeGoogleplayDebugJniLibFolders UP-TO-DATE
+> Task :app:mergeGoogleplayDebugNativeLibs UP-TO-DATE
+> Task :app:stripGoogleplayDebugDebugSymbols UP-TO-DATE
+> Task :app:validateSigningGoogleplayDebug UP-TO-DATE
+> Task :app:writeGoogleplayDebugAppMetadata UP-TO-DATE
+> Task :app:writeGoogleplayDebugSigningConfigVersions UP-TO-DATE
+> Task :app:preStandardDebugBuild UP-TO-DATE
+> Task :app:mergeStandardDebugNativeDebugMetadata NO-SOURCE
+> Task :app:dataBindingMergeDependencyArtifactsStandardDebug UP-TO-DATE
+> Task :app:generateStandardDebugResValues UP-TO-DATE
+> Task :app:generateStandardDebugResources UP-TO-DATE
+> Task :app:mergeStandardDebugResources UP-TO-DATE
+> Task :app:packageStandardDebugResources UP-TO-DATE
+> Task :app:parseStandardDebugLocalResources UP-TO-DATE
+> Task :app:dataBindingGenBaseClassesStandardDebug UP-TO-DATE
+> Task :app:generateStandardDebugBuildConfig UP-TO-DATE
+> Task :app:checkStandardDebugAarMetadata UP-TO-DATE
+> Task :app:mapStandardDebugSourceSetPaths UP-TO-DATE
+> Task :app:createStandardDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksStandardDebug UP-TO-DATE
+> Task :app:processStandardDebugMainManifest UP-TO-DATE
+> Task :app:processStandardDebugManifest UP-TO-DATE
+> Task :app:processStandardDebugManifestForPackage UP-TO-DATE
+> Task :app:processStandardDebugResources UP-TO-DATE
+> Task :app:javaPreCompileStandardDebug UP-TO-DATE
+> Task :app:mergeStandardDebugShaders UP-TO-DATE
+> Task :app:compileStandardDebugShaders NO-SOURCE
+> Task :app:generateStandardDebugAssets UP-TO-DATE
+> Task :app:mergeStandardDebugAssets UP-TO-DATE
+> Task :app:compressStandardDebugAssets UP-TO-DATE
+> Task :app:checkStandardDebugDuplicateClasses UP-TO-DATE
+> Task :app:desugarStandardDebugFileDependencies UP-TO-DATE
+> Task :app:mergeExtDexStandardDebug UP-TO-DATE
+> Task :app:mergeLibDexStandardDebug UP-TO-DATE
+> Task :app:mergeStandardDebugJniLibFolders UP-TO-DATE
+> Task :app:mergeStandardDebugNativeLibs UP-TO-DATE
+> Task :app:stripStandardDebugDebugSymbols UP-TO-DATE
+> Task :app:validateSigningStandardDebug UP-TO-DATE
+> Task :app:writeStandardDebugAppMetadata UP-TO-DATE
+> Task :app:writeStandardDebugSigningConfigVersions UP-TO-DATE
+
+> Task :app:compileStandardDebugKotlin FAILED
+./gradlew : e: file:///
+C:/Users/rajub/Download
+s/MNN/apps/Android/MnnL
+lmChat/app/src/main/jav
+a/com/alibaba/mnnllm/an
+droid/capture/CapturePr
+esenter.kt:78:16 
+Unresolved reference 
+'ttsChannel'.
+At line:1 char:1
++ ./gradlew 
+assembleDebug 2>&1 | 
+Out-File -Encoding 
+utf8 build.txt
++ ~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~
+    + CategoryInfo     
+         : NotSpecifi  
+  ed: (e: file:///C:   
+ /U...e 'ttsChannel    
+'.:String) [], Rem    
+oteException
+    + FullyQualifiedEr 
+   rorId : NativeComm  
+  andError
+ 
+
+> Task :app:compileGoogleplayDebugKotlin
+e: file:///C:/Users/raj
+ub/Downloads/MNN/apps/A
+ndroid/MnnLlmChat/app/s
+rc/main/java/com/alibab
+a/mnnllm/android/captur
+e/CapturePresenter.kt:7
+8:16 Unresolved 
+reference 'ttsChannel'.
+
+> Task :app:compileGoogleplayDebugKotlin FAILED
+
+FAILURE: Build 
+completed with 2 
+failures.
+
+1: Task failed with an 
+exception.
+-----------
+* What went wrong:
+Execution failed for 
+task ':app:compileStand
+ardDebugKotlin'.
+> A failure occurred 
+while executing org.jet
+brains.kotlin.compilerR
+unner.GradleCompilerRun
+nerWithWorkers$GradleKo
+tlinCompilerWorkAction
+   > Compilation 
+error. See log for 
+more details
+
+* Try:
+> Run with 
+--stacktrace option to 
+get the stack trace.
+> Run with --info or 
+--debug option to get 
+more log output.
+> Run with --scan to 
+get full insights.
+> Get more help at http
+s://help.gradle.org.
+=======================
+=======================
+=======================
+=========
+
+2: Task failed with an 
+exception.
+-----------
+* What went wrong:
+Execution failed for 
+task ':app:compileGoogl
+eplayDebugKotlin'.
+> A failure occurred 
+while executing org.jet
+brains.kotlin.compilerR
+unner.GradleCompilerRun
+nerWithWorkers$GradleKo
+tlinCompilerWorkAction
+   > Compilation 
+error. See log for 
+more details
+
+* Try:
+> Run with 
+--stacktrace option to 
+get the stack trace.
+> Run with --info or 
+--debug option to get 
+more log output.
+> Run with --scan to 
+get full insights.
+> Get more help at http
+s://help.gradle.org.
+=======================
+=======================
+=======================
+=========
+
+BUILD FAILED in 12s
+127 actionable tasks: 6 executed, 121 up-to-date
