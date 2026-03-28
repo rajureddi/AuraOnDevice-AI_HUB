@@ -1,0 +1,85 @@
+# AuraOnDevice AI Hub 🧠📱
+
+[![Project Status: Active](https://img.shields.io/badge/Project%20Status-Active-brightgreen.svg)](https://github.com/rajureddi/AuraOnDevice-AI_HUB)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Platform: Android](https://img.shields.io/badge/Platform-Android-3DDC84?logo=android&logoColor=white)](https://developer.android.com/)
+[![Engine: MNN](https://img.shields.io/badge/Engine-MNN-orange.svg)](https://github.com/alibaba/MNN)
+[![Inference: MediaPipe](https://img.shields.io/badge/Inference-MediaPipe-blue.svg)](https://developers.google.com/mediapipe)
+
+---
+
+![AuraOnDevice AI Banner](apps/Android/AuraOnDeviceAi/assets/image_home_new.jpg)
+
+**AuraOnDevice AI Hub** is a cutting-edge, privacy-first mobile application designed to bring the power of state-of-the-art Large Language Models (LLMs) and Multi-modal AI directly to your Android device. Entirely offline, no APIs, no data leaks.
+
+
+---
+
+## ✨ Key Features
+
+### 💬 Advanced LLM Chat
+- **Multi-Engine Support**: Seamlessly switch between **MNN** and **MediaPipe** inference engines.
+- **State-of-the-art Models**: Support for **Gemma 3**, **Qwen**, **DeepSeek**, and more.
+- **Multimodal capabilities**: Interact with text, images, and audio.
+- **Fast Inference**: Optimized for mobile NPU/GPU using Alibaba's MNN and Google's MediaPipe.
+
+### 🎨 AI Studio
+A comprehensive suite of on-device AI tools for developers and enthusiasts:
+- **Vision**: Face Detection, Hand tracking, Pose estimation, Object detection, and Interactive segmentation.
+- **Audio**: Sound classification using YamNet.
+- **Text**: Contextual embeddings (BERT), Language detection, and Sentiment analysis.
+
+### 🔒 Privacy First
+- **100% Offline**: All processing happens on-device.
+- **No Data Harvesting**: Your conversations and data never leave your phone.
+- **No API Costs**: Zero reliance on cloud providers like OpenAI or Anthropic.
+
+---
+
+## 📸 Screenshots & Demos
+
+| DeepSeek Support | Qwen 2 Support | Performance Comparison |
+| :---: | :---: | :---: |
+| ![DeepSeek](apps/Android/AuraOnDeviceAi/assets/deepseek_support.gif) | ![Qwen](apps/Android/AuraOnDeviceAi/assets/qwen_3.gif) | ![Compare](apps/Android/AuraOnDeviceAi/assets/compare.gif) |
+
+### 🎨 AI Studio Showcase
+| Vision Studio | Audio Studio | Image Generation |
+| :---: | :---: | :---: |
+| ![Vision Studio](apps/Android/AuraOnDeviceAi/assets/image_image_new.jpg) | ![Audio Studio](apps/Android/AuraOnDeviceAi/assets/image_sound_new.jpg) | ![Image Diffusion](apps/Android/AuraOnDeviceAi/assets/image_diffusion_new.jpg) |
+
+---
+
+## 🛠 Project Structure
+
+- `apps/Android/AuraOnDeviceAi`: The core Android application source code.
+- `include/`: Native headers for the MNN engine.
+- `source/`: Core engine implementations.
+- `transformers/`: Advanced tools for Large Language Model (LLM) conversion, quantization, and optimization.
+- `tools/`: Performance profiling and debugging utilities.
+
+
+---
+
+## 🚀 Getting Started
+
+1. **Clone the Repo**:
+   ```bash
+   git clone https://github.com/rajureddi/AuraOnDevice-AI_HUB.git
+   ```
+2. **Open in Android Studio**:
+   Navigate to `apps/Android/AuraOnDeviceAi`.
+3. **Build & Run**:
+   Ensure you have the latest Android NDK installed.
+
+For detailed setup instructions, see the [App README](apps/Android/AuraOnDeviceAi/README.md).
+
+---
+
+## 🤝 Contributing
+We welcome contributions! Whether it's optimization, new models, or UI improvements, feel free to open a PR.
+
+## 📄 License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+Created with ❤️ by [Raju Reddi](https://github.com/rajureddi)
