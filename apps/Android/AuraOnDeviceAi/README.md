@@ -32,8 +32,6 @@ The **AI Studio** fragment provides a simplified interface for downloading and l
 ### 🔍 AI Studio Visuals
 
 | Pose Landmarker (Full) | Face Landmarker | LLM Interaction (Gemma/Qwen) |
-| :---: | :---: | :---: |
-| ![Pose Features](../../screenshots/Screenshot_2026_03_28_15_21_05_073_com_aura_on_device_ai_mnnllm.jpg) | ![Face Landmarker](../../screenshots/IMG_20260328_154204.jpg) | ![Chat Video](../../screenshots/VID_20260328_153952.mp4) |
 
 ---
 
@@ -59,15 +57,15 @@ Built on top of `MnnLlmChat`, this app expands features for modern mobile hardwa
 ### Assets Management
 - Built-in downloader for MediaPipe LiteRT (.task) and TFLite models.
 - Automatic splitting and management of large model files.
-
+- Download mnn and mediapipe models from any source
 ---
 
 ## 🚀 Setup & Build
 
 ### Prerequisites
-- Android Studio Ladybug or newer.
+- Android Studio r.
 - Android NDK (Version 25.1.8937393 recommended).
-- A modern Android device (Snapdragon 8 Gen 1+ or Pixel 6+ for best LLM performance).
+- A modern Android device (Snapdragon or mediatek with above 8gb ram for best LLM performance).
 
 ### Build steps
 1. Clone the repository.
@@ -77,11 +75,7 @@ Built on top of `MnnLlmChat`, this app expands features for modern mobile hardwa
 
 ---
 
-## 📂 assets/
-The `assets` folder contains ready-to-use visualizations and potentially pre-built model configurations. Look out for:
-- `compare.gif`: A side-by-side performance analysis.
-- `deepseek_support.gif`: Showcasing integration of DeepSeek models.
-- `qwen_3.gif`: Demonstrating Qwen 3 capabilities.
+
 
 ---
 
