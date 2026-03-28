@@ -38,14 +38,14 @@ A comprehensive suite of on-device AI tools for developers and enthusiasts:
 
 ## 📸 Screenshots & Demos
 
-| DeepSeek Support | Qwen 2 Support | Performance Comparison |
+| Gemma 3 (MediaPipe) | Qwen 2.5 (MNN Engine) | Performance Comparison |
 | :---: | :---: | :---: |
-| ![DeepSeek](apps/Android/AuraOnDeviceAi/assets/deepseek_support.gif) | ![Qwen](apps/Android/AuraOnDeviceAi/assets/qwen_3.gif) | ![Compare](apps/Android/AuraOnDeviceAi/assets/compare.gif) |
+| ![Gemma 3](screenshots/VID_20260328_154045.mp4) | ![Qwen](apps/Android/AuraOnDeviceAi/assets/qwen_3.gif) | ![Compare](apps/Android/AuraOnDeviceAi/assets/compare.gif) |
 
 ### 🎨 AI Studio Showcase
-| Vision Studio | Audio Studio | Image Generation |
+| Vision Studio (Pose) | Face Studio | Image & Sound |
 | :---: | :---: | :---: |
-| ![Vision Studio](apps/Android/AuraOnDeviceAi/assets/image_image_new.jpg) | ![Audio Studio](apps/Android/AuraOnDeviceAi/assets/image_sound_new.jpg) | ![Image Diffusion](apps/Android/AuraOnDeviceAi/assets/image_diffusion_new.jpg) |
+| ![Pose Landmarker](screenshots/Screenshot_2026_03_28_15_21_05_073_com_aura_on_device_ai_mnnllm.jpg) | ![Face Landmarker](screenshots/IMG_20260328_154204.jpg) | ![AI Studio Video](screenshots/VID_20260328_154232.mp4) |
 
 ---
 

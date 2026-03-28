@@ -30,9 +30,10 @@ The **AI Studio** fragment provides a simplified interface for downloading and l
 | **Interactive Segmenter**: Image clipping | | |
 
 ### 🔍 AI Studio Visuals
-| Vision Feature | Audio & Sound |
-| :---: | :---: |
-| ![Vision Features](assets/image_image_new.jpg) | ![Audio Classifier](assets/image_sound_new.jpg) |
+
+| Pose Landmarker (Full) | Face Landmarker | LLM Interaction (Gemma/Qwen) |
+| :---: | :---: | :---: |
+| ![Pose Features](../../screenshots/Screenshot_2026_03_28_15_21_05_073_com_aura_on_device_ai_mnnllm.jpg) | ![Face Landmarker](../../screenshots/IMG_20260328_154204.jpg) | ![Chat Video](../../screenshots/VID_20260328_153952.mp4) |
 
 ---
 
