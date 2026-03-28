@@ -104,10 +104,44 @@ class VisionOverlayView(context: Context, attrs: AttributeSet?) : View(context, 
             if (score < 0.5f) return@forEach // Only draw confident detections
 
             val bb = detection.boundingBox()
-            val drawRect = RectF(bb.left * scale + offsetX, bb.top * scale + offsetY, bb.right * scale + offsetX, bb.bottom * scale + offsetY)
+            var left = bb.left * scale + offsetX
+            var right = bb.right * scale + offsetX
+            val top = bb.top * scale + offsetY
+            val bottom = bb.bottom * scale + offsetY
+
+            // Handle Mirroring for Front Camera
+            if (isFullCrop && isFrontCamera) {
+                val oldLeft = left
+                left = width - right
+                right = width - oldLeft
+            }
+
+            // Clamp Bounding Box to Screen Bounds
+            val drawRect = RectF(
+                Math.max(0f, left),
+                Math.max(0f, top),
+                Math.min(width.toFloat(), right),
+                Math.min(height.toFloat(), bottom)
+            )
+
             canvas.drawRect(drawRect, boxPaint)
+
+            // Draw Class Label with Visibility Check
             val label = "${category?.categoryName()} ${String.format("%.2f", score)}"
-            canvas.drawText(label, drawRect.left, drawRect.top - 10, textPaint)
+            val textWidth = textPaint.measureText(label)
+            val textHeight = textPaint.textSize
+            
+            // Adjust X to stay in screen
+            val textX = Math.max(0f, Math.min(drawRect.left, width - textWidth))
+            
+            // Adjust Y: if box is at the very top, draw text inside the box
+            val textY = if (drawRect.top - 10 < textHeight) {
+                drawRect.top + textHeight + 10
+            } else {
+                drawRect.top - 10
+            }
+            
+            canvas.drawText(label, textX, textY, textPaint)
         }
 
         // Draw Face Detector
@@ -117,12 +151,22 @@ class VisionOverlayView(context: Context, attrs: AttributeSet?) : View(context, 
             var right = boundingBox.right * scale + offsetX
             val top = boundingBox.top * scale + offsetY
             val bottom = boundingBox.bottom * scale + offsetY
+            
             if (isFullCrop && isFrontCamera) {
                 val oldLeft = left
                 left = width - right
                 right = width - oldLeft
             }
-            canvas.drawRect(RectF(left, top, right, bottom), boxPaint)
+            
+            // Clamp to Screen
+            val drawRect = RectF(
+                Math.max(0f, left),
+                Math.max(0f, top),
+                Math.min(width.toFloat(), right),
+                Math.min(height.toFloat(), bottom)
+            )
+            
+            canvas.drawRect(drawRect, boxPaint)
         }
 
         // Draw Hand Landmarks & Skeleton (for both Hand Landmarker and Gesture Recognizer)
