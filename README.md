@@ -42,9 +42,18 @@ A comprehensive suite of on-device AI tools for developers and enthusiasts:
 | ![Gemma 3](screenshots/video_2026-03-28_16-07-28.gif) | ![Qwen](apps/Android/AuraOnDeviceAi/assets/qwen_3.gif) |
 
 ### 🎨 AI Studio Showcase
-| Vision Studio (Pose) | Face Studio | Image & Sound |
-| :---: | :---: | :---: |
-| ![Pose Landmarker](screenshots/Screenshot_2026_03_28_15_21_05_073_com_aura_on_device_ai_mnnllm.jpg) | ![Face Landmarker](screenshots/IMG_20260328_154204.jpg) | ![AI Studio Video](screenshots/VID_20260328_154232.mp4) |
+| Vision Studio (Pose Detection) | Face Studio |  
+| :---: | :---: |
+| ![Pose Landmarker](screenshots/Screenshot_2026_03_28_15_21_05_073_com_aura_on_device_ai_mnnllm.jpg) | ![Face Landmarker](screenshots/IMG_20260328_154204.jpg) |
+Hand and Gesture Detection
+
+https://github.com/user-attachments/assets/77c21d67-6c96-4238-a3af-9809d8c00320
+
+Object Detection 
+
+https://github.com/user-attachments/assets/77cb4ffd-ab2c-4390-a317-33a44f4a5d18
+
+
 
 ---
 
