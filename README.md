@@ -9,7 +9,7 @@
 ---
 | HomePage | Model Market |  Ai Studio |
 | :---: | :---: |:---: |
-| ![HomePage](screenshots/Screenshot_2026_03_28_15_21_05_073_com_aura_on_device_ai_mnnllm.jpg) | ![Model Market ](screenshots/IMG_20260328_154204.jpg) | ![Ai Studio ](screenshots/IMG_20260328_154204.jpg) |
+| ![HomePage](screenshots/photo_2026-03-28_16-0-53.jpg) | ![Model Market ](screenshots/IMG_20260328_154204.jpg) | ![Ai Studio ](screenshots/IMG_20260328_154204.jpg) |
 
 **AuraOnDevice AI Hub** is a cutting-edge, privacy-first mobile application designed to bring the power of state-of-the-art Large Language Models (LLMs) and Multi-modal AI directly to your Android device. Entirely offline, no APIs, no data leaks.
 
