@@ -8,7 +8,6 @@
 
 ---
 
-![AuraOnDevice AI Banner](apps/Android/AuraOnDeviceAi/assets/image_home_new.jpg)
 
 **AuraOnDevice AI Hub** is a cutting-edge, privacy-first mobile application designed to bring the power of state-of-the-art Large Language Models (LLMs) and Multi-modal AI directly to your Android device. Entirely offline, no APIs, no data leaks.
 
@@ -38,9 +37,9 @@ A comprehensive suite of on-device AI tools for developers and enthusiasts:
 
 ## 📸 Screenshots & Demos
 
-| Gemma 3 (MediaPipe) | Qwen 2.5 (MNN Engine) | Performance Comparison |
+| Gemma 3 (MediaPipe) | Qwen 2.5 (MNN Engine) | |
 | :---: | :---: | :---: |
-| ![Gemma 3](screenshots/VID_20260328_154045.mp4) | ![Qwen](apps/Android/AuraOnDeviceAi/assets/qwen_3.gif) | ![Compare](apps/Android/AuraOnDeviceAi/assets/compare.gif) |
+| ![Gemma 3](screenshots/video_2026-03-28_16-07-28.gif) | ![Qwen](apps/Android/AuraOnDeviceAi/assets/qwen_3.gif) |
 
 ### 🎨 AI Studio Showcase
 | Vision Studio (Pose) | Face Studio | Image & Sound |
