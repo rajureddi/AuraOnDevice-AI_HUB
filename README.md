@@ -19,10 +19,11 @@
 ## ✨ Key Features
 
 ### 💬 Advanced LLM Chat
-- **Multi-Engine Support**: Seamlessly switch between **MNN** and **MediaPipe** inference engines.
-- **State-of-the-art Models**: Support for **Gemma 3**, **Qwen**, **DeepSeek**, and more.
+- **State-of-the-art Models**: Support for **Gemma 4**, **Gemma 3**, **Qwen**, **DeepSeek**, and more.
+- **Advanced Engines**: High-performance inference using **MNN**, **MediaPipe**, and the new **LiteRT-LM (Modern)** engine.
 - **Multimodal capabilities**: Interact with text, images, and audio.
-- **Fast Inference**: Optimized for mobile NPU/GPU using Alibaba's MNN and Google's MediaPipe.
+- **Fast Inference**: Optimized for mobile NPU/GPU with latest quantization techniques.
+
 
 ### 🎨 AI Studio
 A comprehensive suite of on-device AI tools for developers and enthusiasts:
