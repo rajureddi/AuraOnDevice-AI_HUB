@@ -1,5 +1,9 @@
 # AuraOnDevice-AI 🤖🎮
 
+### 📥 Download the latest APK
+[**Download AuraOnDeviceAI-v1.0.apk**](./downloads/AuraOnDeviceAI-v1.0.apk) (Ready-to-use debug build)
+
+
 [![Android Studio](https://img.shields.io/badge/Android%20Studio-4285F4?style=flat&logo=android%20studio&logoColor=white)](https://developer.android.com/studio)
 [![Inference: MNN Engine](https://img.shields.io/badge/Inference-MNN%20Engine-orange)](https://github.com/alibaba/MNN)
 [![MediaPipe Tasks](https://img.shields.io/badge/MediaPipe-Tasks-blue)](https://developers.google.com/mediapipe/solutions/genai/llm_inference/android)
@@ -10,10 +14,12 @@ AuraOnDevice-AI is a high-performance, features-packed Android application desig
 
 ## 🏗️ Core Components
 
-AuraOnDevice-AI is built around three major pillars:
+AuraOnDevice-AI is built around four major pillars:
 1. **MNN-LLM Engine**: Alibaba's ultra-fast inference engine for Large Language Models.
 2. **MediaPipe LLM Inference**: Google's standardized API for running LLMs like **Gemma 3** on-device.
-3. **AI Studio**: A modular toolbox for specialized AI tasks (Vision, Audio, Text).
+3. **LiteRT-LM (Modern)**: The latest inference stack for **Gemma 4**, **FastVLM**, and **SmolLM2** models.
+4. **AI Studio**: A modular toolbox for specialized AI tasks (Vision, Audio, Text).
+
 
 ---
 
@@ -45,6 +51,16 @@ Built on top of `MnnLlmChat`, this app expands features for modern mobile hardwa
   - **Hugging Face**: Integrated model browser for seamless downloading.
   - **Local Storage**: Sideload and use your custom models easily.
 - **Multimodal Support**: Future-ready integration for vision-language tasks (LLaVA-MNN).
+- **Internet RAG (Web Search)**: Integrated real-time web search via DuckDuckGo.
+  - **Dynamic Citations**: Provides "Proof" links at the end of responses.
+  - **Wikipedia Priority**: Automatically prioritizes high-quality information sources.
+  - **Optional Toggle**: Enable/Disable internet access per message for privacy and data saving.
+  - **Advanced Engine Integration (LiteRT-LM)**:
+  - **Gemma 4 Support**: Seamlessly run the latest Gemma 4 family including experimental variants.
+  - **FastVLM Support**: High-speed Vision-Language model inference.
+  - **SmolLM2 Support**: Highly efficient, small-parameter models for any mobile hardware.
+- **Search Memory (Local Cache)**: Saved search results are stored locally to save power and data on repeat questions.
+
 
 ---
 
