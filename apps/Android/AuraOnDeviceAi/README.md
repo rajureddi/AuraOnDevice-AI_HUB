@@ -8,7 +8,11 @@
 [![Inference: MNN Engine](https://img.shields.io/badge/Inference-MNN%20Engine-orange)](https://github.com/alibaba/MNN)
 [![MediaPipe Tasks](https://img.shields.io/badge/MediaPipe-Tasks-blue)](https://developers.google.com/mediapipe/solutions/genai/llm_inference/android)
 
-AuraOnDevice-AI is a high-performance, features-packed Android application designed for exploring on-device AI capabilities. It integrates top-tier inference engines (MNN, MediaPipe) to deliver a seamless and privacy-first user experience.
+AuraOnDevice-AI is a high-performance, features-packed Android application designed for exploring on-device AI capabilities. It integrates top-tier inference engines (MNN, MediaPipe, LiteRT-LM) to deliver a seamless and privacy-first user experience. 
+
+### 🔥 New: Gemma 4 Support
+We are excited to bring support for the latest **Gemma 4** models to your mobile device! These cutting-edge models are optimized for high-performance on-device inference, enabling more complex reasoning and creative tasks entirely offline.
+
 
 ---
 
