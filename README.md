@@ -1,10 +1,14 @@
 # AuraOnDevice AI Hub 🧠📱
 
+
+
 [![Project Status: Active](https://img.shields.io/badge/Project%20Status-Active-brightgreen.svg)](https://github.com/rajureddi/AuraOnDevice-AI_HUB)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Platform: Android](https://img.shields.io/badge/Platform-Android-3DDC84?logo=android&logoColor=white)](https://developer.android.com/)
 [![Engine: MNN](https://img.shields.io/badge/Engine-MNN-orange.svg)](https://github.com/alibaba/MNN)
 [![Inference: MediaPipe](https://img.shields.io/badge/Inference-MediaPipe-blue.svg)](https://developers.google.com/mediapipe)
+### 📥 Download the latest APK
+[**Download AuraOnDeviceAI-v1.0.apk**](https://github.com/rajureddi/AuraOnDevice-AI_HUB/releases/download/V1.0.0/auraondeivceai.apk) 
 
 ---
 | HomePage | Model Market |  Ai Studio |
