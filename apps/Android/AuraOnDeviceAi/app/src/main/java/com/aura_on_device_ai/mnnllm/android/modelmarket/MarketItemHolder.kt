@@ -305,11 +305,15 @@ class MarketItemHolder(
         val context = itemView.context
         val modelId = modelMarketItem.modelId
         val source = ModelUtils.getSource(modelId)
-        val repoPath = ModelUtils.getRepositoryPath(modelId)
-        val url = when (source) {
-            "HuggingFace" -> "https://huggingface.co/$repoPath"
-            "ModelScope" -> "https://modelscope.cn/models/$repoPath"
-            "Modelers" -> "https://www.modelers.cn/models/$repoPath"
+        var repoPath = ModelUtils.getRepositoryPath(modelId)
+        if (repoPath.startsWith("URL/")) {
+            repoPath = repoPath.substring(4)
+        }
+        val url = when {
+            repoPath.startsWith("http") -> repoPath
+            source == "HuggingFace" -> "https://huggingface.co/$repoPath"
+            source == "ModelScope" -> "https://modelscope.cn/models/$repoPath"
+            source == "Modelers" -> "https://www.modelers.cn/models/$repoPath"
             else -> null
         }
         if (url != null) {

@@ -320,6 +320,8 @@ class MediaPipeLlmHelper(
 ) {
     private var llmInference: LlmInference? = null
     private var llmSession: LlmInferenceSession? = null
+    @Volatile
+    private var isGenerating = false
     private val TAG = "MediaPipeLlmHelper"
 
     init {
@@ -331,7 +333,6 @@ class MediaPipeLlmHelper(
             val options = LlmInferenceOptions.builder()
                 .setModelPath(localFilePath)
                 .setMaxTokens(2048)
-                .setMaxTopK(40)
                 .build()
 
             llmInference = LlmInference.createFromOptions(context, options)
@@ -343,7 +344,7 @@ class MediaPipeLlmHelper(
                 .build()
             llmSession = LlmInferenceSession.createFromOptions(llmInference!!, sessionOptions)
             
-            Log.d(TAG, "LlmInference and Session initialized from $localFilePath")
+            Log.d(TAG, "LlmInference and Session initialized from $localFilePath with GPU Delegate")
         } catch (e: Exception) {
             Log.e(TAG, "Failed to initialize LlmInference: ${e.message}", e)
             throw e
@@ -376,28 +377,40 @@ class MediaPipeLlmHelper(
     fun generateBlocking(
         prompt: String,
         bitmap: android.graphics.Bitmap? = null,
+        useSession: Boolean = true,
         onToken: (delta: String, isEnd: Boolean) -> Boolean
     ) {
-        val session = llmSession ?: run {
-            onToken("Error: LlmInference session NOT initialized", true)
+        val inference = llmInference ?: run {
+            onToken("Error: LlmInference NOT initialized", true)
             return
         }
+        val session = llmSession
 
         val latch = java.util.concurrent.CountDownLatch(1)
         var stopRequested = false
 
+        isGenerating = true
         try {
-            // Multi-turn: add query to session and generate
-            session.addQueryChunk(prompt)
-            session.generateResponseAsync { delta, isEnd ->
+            val listener: (String, Boolean) -> Unit = { delta, isEnd ->
                 if (isEnd) {
                     onToken("", true)
                     latch.countDown()
                 } else if (delta != null && delta.isNotEmpty() && !stopRequested) {
                     if (onToken(delta, false)) {
-                        stopRequested = true // Stop signal from UI
+                        stopRequested = true
                     }
                 }
+            }
+
+            if (useSession && session != null) {
+                // For LlmInferenceSession 0.10.33:
+                // addQueryChunk(prompt) then generateResponseAsync(listener)
+                session.addQueryChunk(prompt)
+                session.generateResponseAsync(listener)
+            } else {
+                // For LlmInference 0.10.33:
+                // generateResponseAsync(prompt, listener)
+                inference.generateResponseAsync(prompt, listener)
             }
             
             // Wait for Latch to be released when isEnd=true comes back from MediaPipe
@@ -406,18 +419,38 @@ class MediaPipeLlmHelper(
             Log.e(TAG, "Generation failed: ${e.message}", e)
             onToken("Error during generation: ${e.message}", true)
             latch.countDown()
+        } finally {
+            isGenerating = false
         }
     }
 
     fun close() {
+        // If still generating, we must wait or skip to avoid IllegalStateException
+        if (isGenerating) {
+            Log.w(TAG, "Attempting to close while generating. Waiting briefly...")
+            // Busy wait for up to 3000ms
+            var waitTime = 0
+            while (isGenerating && waitTime < 3000) {
+                Thread.sleep(50)
+                waitTime += 50
+            }
+        }
+        
         try {
             llmSession?.close()
+        } catch (e: Exception) {
+            Log.e(TAG, "Error closing llmSession", e)
+        }
+        
+        try {
             llmInference?.close()
         } catch (e: Exception) {
-            Log.e(TAG, "Error closing inference", e)
+            Log.e(TAG, "Error closing llmInference", e)
         }
+        
         llmInference = null
         llmSession = null
+        isGenerating = false
     }
 }
 

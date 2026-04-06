@@ -9,7 +9,8 @@ class ModelSources {
         MODEL_SCOPE,
         HUGGING_FACE,
         MODELERS,
-        LOCAL
+        LOCAL,
+        URL
     }
 
     val remoteSourceType: ModelSourceType
@@ -35,17 +36,20 @@ class ModelSources {
         const val sourceHuffingFace = "HuggingFace"
         const val sourceModelers = "Modelers"
         const val sourceModelScope = "ModelScope"
+        const val sourceUrl = "URL"
 
         val sourceList = listOf(
             sourceModelers,
             sourceHuffingFace,
-            sourceModelScope
+            sourceModelScope,
+            sourceUrl
         )
 
         val sourceDisPlayList = listOf<Int>(
             R.string.source_modelers,
             R.string.source_huggingface,
-            R.string.source_modelscope
+            R.string.source_modelscope,
+            R.string.source_url
         )
 
         @JvmStatic

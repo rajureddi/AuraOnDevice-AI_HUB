@@ -1,0 +1,97 @@
+﻿Configuration on demand is an incubating feature.
+
+> Configure project :app
+WARNING: The option 'android.enableD8.desugaring' is deprecated.
+The current default is 'true'.
+It was removed in version 7.0 of the Android Gradle plugin.
+D8 desugaring is used by default, when applicable.
+model-config.json not found, skipping model download
+No model configurations found, skipping download task
+
+> Task :mnn_tts:preBuild UP-TO-DATE
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :mnn_tts:preDebugBuild UP-TO-DATE
+
+> Task :app:downloadAndUnzipNativeLibs SKIPPED
+-> Checking if native libs exist... [Exists: true]
+
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preGoogleplayDebugBuild UP-TO-DATE
+> Task :mnn_tts:generateDebugResValues UP-TO-DATE
+> Task :mnn_tts:generateDebugResources UP-TO-DATE
+> Task :mnn_tts:packageDebugResources UP-TO-DATE
+> Task :mnn_tts:parseDebugLocalResources UP-TO-DATE
+> Task :mnn_tts:generateDebugRFile UP-TO-DATE
+> Task :mnn_tts:writeDebugAarMetadata UP-TO-DATE
+> Task :mnn_tts:extractDeepLinksDebug UP-TO-DATE
+> Task :mnn_tts:processDebugManifest UP-TO-DATE
+> Task :mnn_tts:compileDebugLibraryResources UP-TO-DATE
+> Task :mnn_tts:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :mnn_tts:generateDebugBuildConfig UP-TO-DATE
+> Task :mnn_tts:compileDebugKotlin UP-TO-DATE
+> Task :mnn_tts:javaPreCompileDebug UP-TO-DATE
+> Task :mnn_tts:compileDebugJavaWithJavac UP-TO-DATE
+> Task :mnn_tts:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :app:dataBindingMergeDependencyArtifactsGoogleplayDebug FAILED
+./gradlew : 
+At line:1 char:1
++ ./gradlew :app:compileGoo
+gleplayDebugKotlin > 
+build_output_01040.txt  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
+    + CategoryInfo         
+     : NotSpecified: (:St  
+  ring) [], RemoteExcept   
+ ion
+    + FullyQualifiedErrorI 
+   d : NativeCommandError
+ 
+FAILURE: Build failed with 
+an exception.
+
+* What went wrong:
+Execution failed for task '
+:app:dataBindingMergeDepend
+encyArtifactsGoogleplayDebu
+g'.
+> Could not resolve all 
+files for configuration ':a
+pp:googleplayDebugCompileCl
+asspath'.
+   > Could not find com.goo
+gle.mediapipe:tasks-genai:0
+.10.40.
+     Required by:
+         project :app
+   > Could not find com.goo
+gle.mediapipe:tasks-vision:
+0.10.40.
+     Required by:
+         project :app
+   > Could not find com.goo
+gle.mediapipe:tasks-audio:0
+.10.40.
+     Required by:
+         project :app
+   > Could not find com.goo
+gle.mediapipe:tasks-text:0.
+10.40.
+     Required by:
+         project :app
+
+* Try:
+> Run with --stacktrace 
+option to get the stack 
+trace.
+> Run with --info or 
+--debug option to get more 
+log output.
+> Run with --scan to get 
+full insights.
+> Get more help at 
+https://help.gradle.org.
+
+BUILD FAILED in 10s
+15 actionable tasks: 1 executed, 14 up-to-date

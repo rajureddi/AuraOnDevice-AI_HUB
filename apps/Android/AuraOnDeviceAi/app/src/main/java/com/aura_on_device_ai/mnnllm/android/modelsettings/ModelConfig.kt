@@ -211,7 +211,7 @@ data class ModelConfig(
                         // Look for .task or .bin
                         val mediaPipeFile = dir.listFiles()?.find { 
                             val name = it.name.lowercase(Locale.getDefault())
-                            name.endsWith(".task") || name.endsWith(".bin") 
+                            name.endsWith(".task") || name.endsWith(".bin") || name.endsWith(".litertlm")
                         }
                         if (mediaPipeFile != null) {
                             return mediaPipeFile.absolutePath

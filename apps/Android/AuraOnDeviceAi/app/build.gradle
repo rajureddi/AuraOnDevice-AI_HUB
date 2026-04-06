@@ -1,7 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    id 'org.jetbrains.kotlin.plugin.serialization' version '2.1.21'
+    id 'org.jetbrains.kotlin.plugin.serialization' version '2.2.10'
 
 }
 
@@ -146,8 +146,11 @@ android {
 dependencies {
 
 //    https://developer.android.com/jetpack/androidx/releases/compose
+    // Jetpack Compose version
     def jetpack_compose_verion = '1.7.8'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    // Kotlin BOM and Stdlib enforcement
+    implementation platform("org.jetbrains.kotlin:kotlin-bom:2.2.10")
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
     implementation 'androidx.appcompat:appcompat:1.7.0'
     implementation 'com.google.android.material:material:1.12.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
@@ -164,6 +167,9 @@ dependencies {
     
     // MNN TTS Framework
     implementation project(':mnn_tts')
+
+    // LiteRT-LM (New Google Edge AI SDK)
+    implementation "com.google.ai.edge.litertlm:litertlm-android:0.9.0"
 
     // MediaPipe dependencies
     def mediapipe_version = "0.10.33"
@@ -242,4 +248,7 @@ dependencies {
     testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.10.2"
     debugImplementation 'com.facebook.stetho:stetho:1.6.0'
     debugImplementation 'com.facebook.stetho:stetho-okhttp3:1.6.0'
+    
+    // Jsoup for HTML parsing (RAG)
+    implementation 'org.jsoup:jsoup:1.17.2'
 }

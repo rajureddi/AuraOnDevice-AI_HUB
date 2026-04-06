@@ -139,28 +139,73 @@ object ModelTypeUtils {
     fun isMediaPipeModel(modelId: String, configPath: String? = null): Boolean {
         val lowerId = modelId.lowercase(Locale.getDefault())
         if (lowerId.contains("mediapipe") || lowerId.contains("genai") || 
-            lowerId.endsWith(".task") || lowerId.endsWith(".bin")) {
+            lowerId.contains("litert") ||
+            lowerId.endsWith(".task") || lowerId.endsWith(".bin") || 
+            lowerId.endsWith(".litertlm") || lowerId.endsWith(".tflite") || lowerId.endsWith(".litert")) {
             return true
         }
         
         // Check config path or model file extension
         if (configPath != null) {
             val lowerPath = configPath.lowercase(Locale.getDefault())
-            if (lowerPath.endsWith(".task") || lowerPath.endsWith(".bin")) {
+            if (lowerPath.endsWith(".task") || lowerPath.endsWith(".bin") || 
+                lowerPath.endsWith(".litertlm") || lowerPath.endsWith(".tflite") || lowerPath.endsWith(".litert")) {
                 return true
             }
             
-            // If it's a directory, check for .task or .bin inside
+            // If it's a directory, check for MediaPipe files but ensure no .mnn files (which would indicate MNN engine)
             val dir = File(configPath)
             if (dir.isDirectory) {
-                val hasMediaPipeFile = dir.listFiles()?.any { 
+                val files = dir.listFiles()
+                val hasMnn = files?.any { it.name.lowercase(Locale.getDefault()).endsWith(".mnn") } ?: false
+                if (hasMnn) return false
+                
+                val hasMediaPipeFile = files?.any { 
                     val name = it.name.lowercase(Locale.getDefault())
-                    name.endsWith(".task") || name.endsWith(".bin")
+                    name.endsWith(".task") || name.endsWith(".bin") || 
+                    name.endsWith(".litertlm") || name.endsWith(".tflite") || name.endsWith(".litert")
                 } ?: false
                 if (hasMediaPipeFile) return true
             }
         }
         
+        return false
+    }
+    /**
+     * Check if the model is a LiteRT-LM model (Modern Engine API)
+     */
+    fun isLiteRTLm(configPath: String?): Boolean {
+        if (configPath == null) return false
+        val lowerPath = configPath.lowercase(Locale.getDefault())
+        if (lowerPath.endsWith(".litertlm") || lowerPath.endsWith(".litert") || lowerPath.endsWith(".tflite")) {
+            return true
+        }
+        val dir = File(configPath)
+        if (dir.isDirectory) {
+            return dir.listFiles()?.any { 
+                val name = it.name.lowercase(Locale.getDefault())
+                name.endsWith(".litertlm") || name.endsWith(".litert") || name.endsWith(".tflite")
+            } ?: false
+        }
+        return false
+    }
+
+    /**
+     * Check if the model is a MediaPipe Task model (Legacy GenAI Tasks)
+     */
+    fun isMediaPipeTask(configPath: String?): Boolean {
+        if (configPath == null) return false
+        val lowerPath = configPath.lowercase(Locale.getDefault())
+        if (lowerPath.endsWith(".task") || lowerPath.endsWith(".bin")) {
+            return true
+        }
+        val dir = File(configPath)
+        if (dir.isDirectory) {
+            return dir.listFiles()?.any { 
+                val name = it.name.lowercase(Locale.getDefault())
+                name.endsWith(".task") || name.endsWith(".bin")
+            } ?: false
+        }
         return false
     }
 }

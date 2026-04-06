@@ -12,6 +12,7 @@ import com.aura_on_device_ai.mnnllm.android.llm.ChatSession
 import com.aura_on_device_ai.mnnllm.android.chat.model.ChatDataItem
 import com.aura_on_device_ai.mnnllm.android.chat.model.ChatDataManager
 import com.aura_on_device_ai.mnnllm.android.chat.chatlist.ChatViewHolders
+import com.aura_on_device_ai.mnnllm.android.llm.rag.InternetRagManager
 import com.aura_on_device_ai.mnnllm.android.llm.GenerateProgressListener
 import com.aura_on_device_ai.mnnllm.android.utils.FileUtils
 import com.aura_on_device_ai.mnnllm.android.model.ModelTypeUtils
@@ -35,6 +36,8 @@ class ChatPresenter(
 ) {
     val dateFormat: DateFormat get() = chatActivity.dateFormat!!
     var stopGenerating = false
+    var isRagEnabled = false
+    private val internetRagManager by lazy { InternetRagManager(chatActivity) }
     private var sessionId: String? = null
     private var sessionName:String? = null
     private var chatDataManager: ChatDataManager? = null
@@ -220,7 +223,6 @@ class ChatPresenter(
 
     suspend fun requestGenerate(userData: ChatDataItem, generateListener: GenerateListener): HashMap<String, Any> {
         this.generateListener = generateListener
-        val prompt = PromptUtils.generateUserPrompt(userData)
         
         // Ensure user input is saved first
         try {
@@ -237,7 +239,22 @@ class ChatPresenter(
             additionalListeners.forEach { it.onGenerateStart() }
             
             val result = presenterScope.async {
-                return@async submitRequest(prompt, userData)
+                var currentInput = PromptUtils.generateUserPrompt(userData)
+                if (isRagEnabled) {
+                    currentInput = internetRagManager.getAugmentedPrompt(currentInput)
+                    // Temporarily disable history to prevent the LLM from relying on previous 
+                    // hallucinated context, ensuring it strictly follows the new RAG override block.
+                    chatSession.setKeepHistory(false)
+                }
+                
+                val requestResult = submitRequest(currentInput, userData)
+                
+                if (isRagEnabled) {
+                    // Restore history tracking for subsequent normal chats
+                    chatSession.setKeepHistory(true)
+                }
+                
+                return@async requestResult
             }.await()
             
             return result

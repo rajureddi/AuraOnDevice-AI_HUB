@@ -140,6 +140,7 @@
     <string name="source_modelscope">ModelScope</string>
     <string name="source_custom">Custom</string>
     <string name="source_builtin">Builtin</string>
+    <string name="source_url">URL</string>
     <string name="diffusion_mode_memory_saving">Memory Saving Mode</string>
     <string name="diffusion_mode_memory_enough">Memory Enough Mode</string>
     <string name="diffusion_mode_memory_balance">Memory Balance Mode</string>

@@ -34,10 +34,23 @@ class CommunityDownloadDialogFragment : BaseBottomSheetDialogFragment() {
 
         btnCancel.setOnClickListener { dismiss() }
 
+        sourceGroup.setOnCheckedChangeListener { _, checkedId ->
+            when (checkedId) {
+                R.id.rb_url -> {
+                    etRepoId.hint = "Direct File URL (https://...)"
+                }
+                else -> {
+                    etRepoId.hint = "Repository ID (e.g. MNN/Qwen2-7B-Chat-Int4-MNN)"
+                }
+            }
+        }
+
         btnDownload.setOnClickListener {
             val repoId = etRepoId.text.toString().trim()
             if (repoId.isEmpty()) {
-                Toast.makeText(requireContext(), "Please enter a repository ID", Toast.LENGTH_SHORT).show()
+                val message = if (sourceGroup.checkedRadioButtonId == R.id.rb_url) 
+                    "Please enter a direct URL" else "Please enter a repository ID"
+                Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
@@ -45,6 +58,7 @@ class CommunityDownloadDialogFragment : BaseBottomSheetDialogFragment() {
                 R.id.rb_modelscope -> "ModelScope/"
                 R.id.rb_modelers -> "Modelers/"
                 R.id.rb_huggingface -> "HuggingFace/"
+                R.id.rb_url -> "URL/"
                 else -> "ModelScope/"
             }
 

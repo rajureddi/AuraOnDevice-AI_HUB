@@ -190,6 +190,9 @@ class ChatActivity : AppCompatActivity() {
                 Log.d(TAG, "isThinking: $isThinking")
                 (chatSession as LlmSession).updateThinking(isThinking)
             }
+            setOnRagModeChanged { isRagEnabled ->
+                chatPresenter.isRagEnabled = isRagEnabled
+            }
             setOnAudioOutputModeChanged {
                 chatPresenter.setEnableAudioOutput(it)
             }

@@ -299,25 +299,87 @@ object ChatRouter {
         if (isStopDownloadOnChatEnabled(context)) {
             downloadManager.pauseAllDownloads()
         }
-        var configFilePath: String? = destModelDir ?: ModelUtils.getConfigPathForModel(modelId)
+
+        var baseDir: File? = destModelDir?.let { File(it) }
         
-        // If it's a directory, try to resolve the actual config file within it
-        if (configFilePath != null) {
-            val file = File(configFilePath)
-            if (file.isDirectory) {
-                // Try to find a config file or model file inside
-                val resolvedConfig = ModelConfig.getDefaultConfigFile(modelId)
-                if (resolvedConfig != null) {
-                    configFilePath = resolvedConfig
+        // If destModelDir isn't provided or isn't a directory, query the DownloadManager
+        if (baseDir == null || !baseDir.isDirectory) {
+             val downloadedFile = downloadManager.getDownloadedFile(modelId)
+             if (downloadedFile != null) {
+                  baseDir = if (downloadedFile.isDirectory) downloadedFile else downloadedFile.parentFile
+             }
+        }
+        
+        // Fallback for local
+        if ((baseDir == null || !baseDir.isDirectory) && modelId.startsWith("local/")) {
+             val localFile = File(modelId.removePrefix("local/"))
+             baseDir = if (localFile.isDirectory) localFile else localFile.parentFile
+        }
+
+        var configFilePath: String? = null
+
+        if (baseDir != null && baseDir.isDirectory) {
+            // Check for multiple model files
+            val isMediaPipe = ModelTypeUtils.isMediaPipeModel(modelId, baseDir.absolutePath)
+            
+            val modelFiles = baseDir.listFiles()?.filter { 
+                val name = it.name.lowercase(java.util.Locale.getDefault())
+                name.endsWith(".mnn") || name.endsWith(".task") || name.endsWith(".bin") || 
+                name.endsWith(".litertlm") || name.endsWith(".tflite") || name.endsWith(".litert")
+            }?.sortedBy { it.name } ?: emptyList()
+
+            val hasMnnFile = modelFiles.any { it.name.lowercase(java.util.Locale.getDefault()).endsWith(".mnn") }
+
+            // If it's a MediaPipe/LiteRT model with multiple files (ignore for MNN models as requested)
+            if (modelFiles.size > 1 && !isDiffusion && isMediaPipe && !hasMnnFile) {
+                // Show selection dialog
+                val dialog = MaterialAlertDialogBuilder(context)
+                    .setTitle("Select Model Version")
+                    .setItems(modelFiles.map { it.name }.toTypedArray()) { _, which ->
+                        val selectedPath = modelFiles[which].absolutePath
+                        launchChatActivity(context, selectedPath, modelId, sessionId, isDiffusion, captureAndExplain)
+                    }
+                    .setCancelable(true)
+                    .create()
+                dialog.show()
+                return
+            } else if (modelFiles.size == 1 && isMediaPipe) {
+                configFilePath = modelFiles[0].absolutePath
+            }
+        }
+
+        // If we didn't resolve configFilePath via single MediaPipe file, fallback to normal ModelUtils resolution
+        if (configFilePath == null) {
+            configFilePath = destModelDir ?: ModelUtils.getConfigPathForModel(modelId)
+            
+            // Check again if the fallback returned a directory and try to resolve it
+            if (configFilePath != null) {
+                val file = File(configFilePath)
+                if (file.isDirectory) {
+                    val resolvedConfig = ModelConfig.getDefaultConfigFile(modelId)
+                    if (resolvedConfig != null) {
+                        configFilePath = resolvedConfig
+                    }
                 }
             }
         }
 
+        launchChatActivity(context, configFilePath, modelId, sessionId, isDiffusion, captureAndExplain)
+    }
+
+    private fun launchChatActivity(
+        context: Context,
+        configFilePath: String?,
+        modelId: String,
+        sessionId: String?,
+        isDiffusion: Boolean,
+        captureAndExplain: Boolean
+    ) {
         val configFileExists = configFilePath?.let { File(it).exists() } ?: false
         if (!configFileExists) {
             Toast.makeText(
                 context,
-                context.getString(R.string.config_file_not_found, configFilePath?: modelId),
+                context.getString(R.string.config_file_not_found, configFilePath ?: modelId),
                 Toast.LENGTH_LONG
             ).show()
             return
@@ -335,7 +397,7 @@ object ChatRouter {
         intent.putExtra("captureAndExplain", captureAndExplain)
 
         if (context !is Activity) {
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         }
         context.startActivity(intent)
     }

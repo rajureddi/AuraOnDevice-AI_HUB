@@ -17,7 +17,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter the repository ID from ModelScope, Modelers, or HuggingFace to download."
+        android:text="Enter the repository ID from ModelScope, Modelers, or HuggingFace, or a direct model URL to download."
         android:textSize="14sp"
         android:textColor="?attr/colorOnSurfaceVariant"
         android:layout_marginBottom="24dp"/>
@@ -57,7 +57,14 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="HuggingFace"/>
+            android:text="HF"/>
+
+        <RadioButton
+            android:id="@+id/rb_url"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"
+            android:text="URL"/>
     </RadioGroup>
 
     <com.google.android.material.textfield.TextInputLayout

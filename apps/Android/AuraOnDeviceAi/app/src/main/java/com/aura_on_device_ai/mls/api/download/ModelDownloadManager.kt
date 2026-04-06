@@ -6,6 +6,7 @@ import android.content.Context
 import com.aura_on_device_ai.mls.api.ApplicationProvider
 import com.aura_on_device_ai.mls.api.download.hf.HfModelDownloader
 import com.aura_on_device_ai.mls.api.download.ms.MsModelDownloader
+import com.aura_on_device_ai.mls.api.download.url.DirectUrlModelDownloader
 import java.io.File
 
 /**
@@ -17,6 +18,7 @@ class ModelDownloadManager(context: Context) : ModelRepoDownloader.ModelRepoDown
     private val cacheDir: String = context.filesDir.absolutePath + "/.mnnmodels"
     private val hfDownloader: HfModelDownloader
     private val msDownloader: MsModelDownloader
+    private val urlDownloader: DirectUrlModelDownloader
 
     private var downloadListener: DownloadListener? = null
     private val downloadListeners: MutableList<DownloadListener> = java.util.concurrent.CopyOnWriteArrayList()
@@ -24,6 +26,7 @@ class ModelDownloadManager(context: Context) : ModelRepoDownloader.ModelRepoDown
     init {
         hfDownloader = HfModelDownloader(this, cacheDir)
         msDownloader = MsModelDownloader(this, cacheDir)
+        urlDownloader = DirectUrlModelDownloader(this, cacheDir)
     }
     
     // Cache for download info to support progress and pause states
@@ -67,15 +70,21 @@ class ModelDownloadManager(context: Context) : ModelRepoDownloader.ModelRepoDown
         downloadListeners.forEach { it.onDownloadStart(modelId) }
         
         when {
+            ModelIdUtils.getRepositoryPath(modelId).startsWith("URL/") || 
+            ModelIdUtils.getRepositoryPath(modelId).contains("://") -> {
+                urlDownloader.download(modelId)
+            }
             modelId.startsWith("HuggingFace/") || modelId.startsWith("Huggingface/") -> {
                 hfDownloader.download(modelId)
             }
             modelId.startsWith("ModelScope/") -> {
                 msDownloader.download(modelId)
             }
+            modelId.startsWith("URL/") -> {
+                urlDownloader.download(modelId)
+            }
             else -> {
                 // Default to ModelScope for unprefixed models
-                // This supports models like "taobao-mnn/..." from ModelScope
                 msDownloader.download(modelId)
             }
         }
@@ -89,6 +98,7 @@ class ModelDownloadManager(context: Context) : ModelRepoDownloader.ModelRepoDown
     fun pauseDownload(modelId: String) {
         hfDownloader.pause(modelId)
         msDownloader.pause(modelId)
+        urlDownloader.pause(modelId)
     }
 
     fun pauseAllDownloads() {
@@ -115,6 +125,8 @@ class ModelDownloadManager(context: Context) : ModelRepoDownloader.ModelRepoDown
         DownloadCoroutineManager.launchDownload {
              if (modelId.startsWith("HuggingFace/") || modelId.startsWith("Huggingface/")) {
                  hfDownloader.checkUpdate(modelId)
+             } else if (modelId.startsWith("URL/")) {
+                 urlDownloader.checkUpdate(modelId)
              } else {
                  // Default to ModelScope for unprefixed models
                  msDownloader.checkUpdate(modelId)
@@ -133,6 +145,8 @@ class ModelDownloadManager(context: Context) : ModelRepoDownloader.ModelRepoDown
 
         val isDownloaded = if (modelId.startsWith("HuggingFace/") || modelId.startsWith("Huggingface/")) {
             hfDownloader.isDownloaded(modelId)
+        } else if (modelId.startsWith("URL/")) {
+            urlDownloader.isDownloaded(modelId)
         } else {
             // Default to ModelScope for unprefixed models
             msDownloader.isDownloaded(modelId)
@@ -176,6 +190,9 @@ class ModelDownloadManager(context: Context) : ModelRepoDownloader.ModelRepoDown
 
         val msPath = msDownloader.getDownloadPath(modelId)
         if (msPath.exists()) return msPath
+
+        val urlPath = urlDownloader.getDownloadPath(modelId)
+        if (urlPath.exists()) return urlPath
 
         return null
     }
@@ -287,6 +304,8 @@ class ModelDownloadManager(context: Context) : ModelRepoDownloader.ModelRepoDown
     private fun getDownloader(modelId: String): ModelRepoDownloader {
         return if (modelId.startsWith("HuggingFace/") || modelId.startsWith("Huggingface/")) {
             hfDownloader
+        } else if (modelId.startsWith("URL/")) {
+            urlDownloader
         } else {
              msDownloader
         }

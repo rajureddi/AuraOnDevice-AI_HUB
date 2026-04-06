@@ -3,7 +3,9 @@ package com.aura_on_device_ai.mnnllm.android.llm
 import android.content.Context
 import android.util.Log
 import com.aura_on_device_ai.mnnllm.android.chat.model.ChatDataItem
+import com.aura_on_device_ai.mnnllm.android.mediapipe.LiteRTLmHelper
 import com.aura_on_device_ai.mnnllm.android.mediapipe.MediaPipeLlmHelper
+import com.aura_on_device_ai.mnnllm.android.model.ModelTypeUtils
 
 class MediaPipeChatSession(
     private val context: Context,
@@ -13,7 +15,8 @@ class MediaPipeChatSession(
     private val initialHistory: List<ChatDataItem>? = null
 ) : ChatSession {
     private val TAG = "MediaPipeChatSession"
-    private var llmHelper: MediaPipeLlmHelper? = null
+    private var modernHelper: LiteRTLmHelper? = null
+    private var legacyHelper: MediaPipeLlmHelper? = null
     private var history = initialHistory?.toMutableList() ?: mutableListOf()
     private var keepHistory = true
 
@@ -23,18 +26,18 @@ class MediaPipeChatSession(
     override var supportOmni: Boolean = false
 
     override fun load() {
-        Log.d(TAG, "Loading LiteRT-LM model from $modelPath")
-        llmHelper = MediaPipeLlmHelper(context, modelPath)
-        
-        // Seed the session with existing history if any
-        history.forEach { item ->
-            val text = item.text ?: return@forEach
-            if (item.type == com.aura_on_device_ai.mnnllm.android.chat.chatlist.ChatViewHolders.USER) {
-                llmHelper?.addQuery(text)
-            } else if (item.type == com.aura_on_device_ai.mnnllm.android.chat.chatlist.ChatViewHolders.ASSISTANT) {
-                llmHelper?.addResponse(text)
+        if (ModelTypeUtils.isLiteRTLm(modelPath)) {
+            try {
+                Log.d(TAG, "Loading modern LiteRT-LM engine for $modelPath")
+                modernHelper = LiteRTLmHelper(context, modelPath)
+                return
+            } catch (e: Exception) {
+                Log.e(TAG, "Failed to load via modern engine, falling back to legacy for $modelPath", e)
             }
         }
+        
+        Log.d(TAG, "Loading legacy MediaPipe Task engine for $modelPath")
+        legacyHelper = MediaPipeLlmHelper(context, modelPath)
     }
 
     override fun generate(
@@ -42,11 +45,7 @@ class MediaPipeChatSession(
         params: Map<String, Any>,
         progressListener: GenerateProgressListener
     ): HashMap<String, Any> {
-        val helper = llmHelper ?: run {
-            return hashMapOf("error" to true, "message" to "LiteRT-LM model NOT loaded")
-        }
-
-        // Add user prompt to history
+        // Add user prompt to history (maintaining UI state)
         if (keepHistory) {
             history.add(ChatDataItem(null, com.aura_on_device_ai.mnnllm.android.chat.chatlist.ChatViewHolders.USER, prompt))
         }
@@ -67,20 +66,38 @@ class MediaPipeChatSession(
                 }
             } else null
 
-            helper.generateBlocking(prompt, bitmap) { delta, isEnd ->
-                if (isEnd) {
-                    val response = responseBuilder.toString()
-                    if (keepHistory && response.isNotEmpty()) {
-                        history.add(ChatDataItem(null, com.aura_on_device_ai.mnnllm.android.chat.chatlist.ChatViewHolders.ASSISTANT, response))
-                    }
-                    progressListener.onProgress(null)
-                    result["response"] = response
-                } else if (delta.isNotEmpty()) {
-                    responseBuilder.append(delta)
-                    val stop = progressListener.onProgress(delta)
-                    if (stop) return@generateBlocking true
+            // Format only the NEW turn. Since we use useSession = true, past history is already in KV-cache!
+            val isGemma = modelId.contains("gemma", ignoreCase = true)
+            val isLlama = modelId.contains("llama", ignoreCase = true)
+            val isQwen = modelId.contains("qwen", ignoreCase = true)
+            val newTurnPrompt: String
+            
+            if (isGemma) {
+                newTurnPrompt = "<start_of_turn>user\n$prompt<end_of_turn>\n<start_of_turn>model\n"
+            } else if (isLlama) {
+                newTurnPrompt = "<|start_header_id|>user<|end_header_id|>\n\n$prompt<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n"
+            } else if (isQwen) {
+                newTurnPrompt = "<|im_start|>user\n$prompt<|im_end|>\n<|im_start|>assistant\n"
+            } else {
+                newTurnPrompt = prompt // Fallback for unknown models
+            }
+
+            Log.d(TAG, "Inference prompt: $newTurnPrompt")
+
+            // Execute via the active engine
+            if (modernHelper != null) {
+                modernHelper!!.generateBlocking(newTurnPrompt, bitmap) { delta, isEnd ->
+                    handleToken(delta, isEnd, responseBuilder, progressListener)
                 }
-                false
+            } else if (legacyHelper != null) {
+                legacyHelper!!.generateBlocking(newTurnPrompt, bitmap) { delta, isEnd ->
+                    handleToken(delta, isEnd, responseBuilder, progressListener)
+                }
+            } else {
+                Log.e(TAG, "No inference engine loaded")
+                progressListener.onProgress(null)
+                result["error"] = true
+                result["message"] = "No inference engine loaded"
             }
 
         } catch (e: Exception) {
@@ -93,14 +110,43 @@ class MediaPipeChatSession(
         return result
     }
 
+    private fun handleToken(
+        delta: String,
+        isEnd: Boolean,
+        responseBuilder: StringBuilder,
+        progressListener: GenerateProgressListener
+    ): Boolean {
+        if (isEnd) {
+            val response = responseBuilder.toString()
+            if (keepHistory && response.isNotEmpty() && (history.isEmpty() || history.last().text != response)) {
+                history.add(ChatDataItem(null, com.aura_on_device_ai.mnnllm.android.chat.chatlist.ChatViewHolders.ASSISTANT, response))
+            }
+            progressListener.onProgress(null)
+            return false
+        } else if (delta.isNotEmpty()) {
+            val sanitizedDelta = delta.replace("<start_of_turn>", "")
+                .replace("<end_of_turn>", "").replace("<|eot_id|>", "")
+                .replace("<|im_end|>", "").replace("<im_end>", "").replace("<eos>", "")
+                .replace("<|start_header_id|>", "").replace("<|end_header_id|>", "")
+            
+            if (sanitizedDelta.isNotEmpty()) {
+                responseBuilder.append(sanitizedDelta)
+                return progressListener.onProgress(sanitizedDelta)
+            }
+        }
+        return false
+    }
+
     override fun reset(): String {
         history.clear()
         return sessionId
     }
 
     override fun release() {
-        llmHelper?.close()
-        llmHelper = null
+        modernHelper?.close()
+        modernHelper = null
+        legacyHelper?.close()
+        legacyHelper = null
     }
 
     override fun setKeepHistory(keepHistory: Boolean) {

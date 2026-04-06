@@ -39,6 +39,7 @@ class ChatInputComponent(
     private var currentModelName: String = modelName
     private var onStopGenerating: (() -> Unit)? = null
     private var onThinkingModeChanged: ((Boolean) -> Unit)? = null
+    private var onRagModeChanged: ((Boolean) -> Unit)? = null
     private var onAudioOutputModeChanged: ((Boolean) -> Unit)? = null
     private var onSendMessage: ((ChatDataItem) -> Unit)? = null
     private lateinit var editUserMessage: EditText
@@ -56,6 +57,7 @@ class ChatInputComponent(
         setupAttachmentPickerModule()
         setupVoiceRecordingModule()
         setupThinkingMode()
+        setupRagMode()
         setupToggleAudioOutput()
         updateAudioOutput()
     }
@@ -71,6 +73,9 @@ class ChatInputComponent(
         
         // Update thinking mode
         setupThinkingMode()
+        
+        // Update rag mode
+        binding.btnToggleRag.visibility = if (ModelTypeUtils.isDiffusionModel(currentModelName) || ModelTypeUtils.isAudioModel(currentModelId)) View.GONE else View.VISIBLE
         
         // Update audio output
         updateAudioOutput()
@@ -121,6 +126,8 @@ class ChatInputComponent(
         }
     }
     
+    
+    
     private fun setupThinkingMode() {
         val extraTags = ModelListManager.getExtraTags(currentModelId)
         binding.btnToggleThinking.visibility = if (ModelTypeUtils.isSupportThinkingSwitchByTags(extraTags)) {
@@ -137,6 +144,19 @@ class ChatInputComponent(
             binding.btnToggleThinking.isSelected = !binding.btnToggleThinking.isSelected
             onThinkingModeChanged?.apply {
                 this(binding.btnToggleThinking.isSelected)
+            }
+        }
+    }
+
+    private fun setupRagMode() {
+        binding.btnToggleRag.visibility = if (ModelTypeUtils.isDiffusionModel(currentModelName) || ModelTypeUtils.isAudioModel(currentModelId)) View.GONE else View.VISIBLE
+        binding.btnToggleRag.setOnClickListener {
+            if (chatActivity.isLoading) {
+                return@setOnClickListener
+            }
+            binding.btnToggleRag.isSelected = !binding.btnToggleRag.isSelected
+            onRagModeChanged?.apply {
+                this(binding.btnToggleRag.isSelected)
             }
         }
     }
@@ -317,6 +337,10 @@ class ChatInputComponent(
 
     fun setOnThinkingModeChanged(onThinkingModeChanged: (Boolean)->Unit) {
         this.onThinkingModeChanged = onThinkingModeChanged
+    }
+
+    fun setOnRagModeChanged(onRagModeChanged: (Boolean)->Unit) {
+        this.onRagModeChanged = onRagModeChanged
     }
 
     fun setOnAudioOutputModeChanged(onAudioOutputChanged: (Boolean)->Unit) {

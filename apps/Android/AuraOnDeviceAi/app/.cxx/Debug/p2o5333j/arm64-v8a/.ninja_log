@@ -13,3 +13,16 @@
 20	455	7963918995659911	C:/Users/rajub/Downloads/MNN/apps/Android/AuraOnDeviceAi/app/build/intermediates/cxx/Debug/p2o5333j/obj/arm64-v8a/libmnnllmapp.so	dd90308336def2b7
 8	169	7963919880512847	C:/Users/rajub/Downloads/MNN/apps/Android/AuraOnDeviceAi/app/build/intermediates/cxx/Debug/p2o5333j/obj/arm64-v8a/libmnnllmapp.so	dd90308336def2b7
 12	550	7963950365068873	C:/Users/rajub/Downloads/MNN/apps/Android/AuraOnDeviceAi/app/build/intermediates/cxx/Debug/p2o5333j/obj/arm64-v8a/libmnnllmapp.so	dd90308336def2b7
+17	644	7965155321972849	C:/Users/rajub/Downloads/MNN/apps/Android/AuraOnDeviceAi/app/build/intermediates/cxx/Debug/p2o5333j/obj/arm64-v8a/libmnnllmapp.so	dd90308336def2b7
+0	22	0	clean	54cb899c8ce0d72
+0	16	0	clean	54cb899c8ce0d72
+82	377	7971323489372196	CMakeFiles/mnnllmapp.dir/mnn_wrapper_jni.cpp.o	b58f19d30b5ffc54
+100	7365	7971323558202368	CMakeFiles/mnnllmapp.dir/crash_util.cpp.o	e9fd29252c29eccd
+166	11332	7971323597854810	CMakeFiles/mnnllmapp.dir/video/image_utils.cpp.o	89f3c7411ac71c92
+178	12369	7971323609226903	CMakeFiles/mnnllmapp.dir/video/video_processor.cpp.o	f22be4ca3ffbe411
+129	12987	7971323615024231	CMakeFiles/mnnllmapp.dir/video/video_decoder.cpp.o	4bce1f39e6dc508
+154	14664	7971323631252843	CMakeFiles/mnnllmapp.dir/video/byte_buffer_decoder.cpp.o	8b13ca64827aa83e
+141	19520	7971323679335692	CMakeFiles/mnnllmapp.dir/processor.cpp.o	be174a4294a8976
+14	27711	7971323762030327	CMakeFiles/mnnllmapp.dir/llm_mnn_jni.cpp.o	b2dbd13ced1214e7
+118	29089	7971323775191811	CMakeFiles/mnnllmapp.dir/llm_session.cpp.o	fab1424dec4829e1
+29089	29916	7971323783406926	C:/Users/rajub/Downloads/MNN/apps/Android/AuraOnDeviceAi/app/build/intermediates/cxx/Debug/p2o5333j/obj/arm64-v8a/libmnnllmapp.so	dd90308336def2b7

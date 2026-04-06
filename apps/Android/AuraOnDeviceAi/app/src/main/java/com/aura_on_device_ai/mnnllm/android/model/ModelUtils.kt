@@ -191,10 +191,14 @@ object ModelUtils {
         listOf(
             ModelSources.sourceModelers,
             ModelSources.sourceHuffingFace,
-            ModelSources.sourceModelScope
+            ModelSources.sourceModelScope,
+            ModelSources.sourceUrl
         ).forEach { source ->
-            val modelId = if (source == ModelSources.sourceHuffingFace)
-                "$source/taobao-mnn/$modelName" else "$source/MNN/$modelName"
+            val modelId = when (source) {
+                ModelSources.sourceHuffingFace -> "$source/taobao-mnn/$modelName"
+                ModelSources.sourceUrl -> "$source/$modelName" // Direct URL use filename
+                else -> "$source/MNN/$modelName"
+            }
             val downloadFile = instance.getDownloadedFile(modelId)
             Log.d(TAG, "getValidModelIdFromName: modelId: $modelId downloadFile: ${downloadFile} exists: ${downloadFile?.exists()}")
             if (instance.getDownloadedFile(modelId) != null) {
@@ -258,17 +262,23 @@ object ModelUtils {
         
         try {
             val source = getSource(modelId)
-            val repoPath = getRepositoryPath(modelId)
+            var repoPath = getRepositoryPath(modelId)
+            
+            if (repoPath.startsWith("URL/")) {
+                repoPath = repoPath.substring(4)
+            }
             
             if (source == null) {
                 Toast.makeText(context, context.getString(R.string.unable_to_determine_model_source), Toast.LENGTH_SHORT).show()
                 return
             }
             
-            val url = when (source) {
-                "HuggingFace" -> "https://huggingface.co/$repoPath"
-                "ModelScope" -> "https://modelscope.cn/models/$repoPath"
-                "Modelers" -> "https://www.modelers.cn/models/$repoPath"
+            val url = when {
+                repoPath.startsWith("http") -> repoPath
+                source == "HuggingFace" -> "https://huggingface.co/$repoPath"
+                source == "ModelScope" -> "https://modelscope.cn/models/$repoPath"
+                source == "Modelers" -> "https://www.modelers.cn/models/$repoPath"
+                source == "URL" -> repoPath
                 else -> {
                     Toast.makeText(context, context.getString(R.string.unknown_source, source), Toast.LENGTH_SHORT).show()
                     return
@@ -288,6 +298,7 @@ object ModelUtils {
             modelId.startsWith("HuggingFace/") || modelId.contains("taobao-mnn") -> context.getString(R.string.huggingface)
             modelId.startsWith("ModelScope/") -> context.getString(R.string.modelscope)
             modelId.startsWith("Modelers/") -> context.getString(R.string.modelers)
+            modelId.startsWith("URL/") -> context.getString(R.string.source_url)
             else -> null
         }
     }

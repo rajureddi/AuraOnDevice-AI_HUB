@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/rajub/Desktop/Learning/FastApi/PocketLLM/apps/Android/MnnLlmChat/app/src/main/cpp
+# Install script for directory: C:/Users/rajub/Downloads/MNN/apps/Android/AuraOnDeviceAi/app/src/main/cpp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/rajub/Desktop/Learning/FastApi/PocketLLM/apps/Android/MnnLlmChat/app/.cxx/RelWithDebInfo/1h919v61/arm64-v8a/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/rajub/Downloads/MNN/apps/Android/AuraOnDeviceAi/app/.cxx/RelWithDebInfo/1h919v61/arm64-v8a/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
