@@ -1,7 +1,7 @@
 # AuraOnDevice-AI 🤖🎮
 
 ### 📥 Download the latest APK
-[**Download AuraOnDeviceAI-v1.0.apk**](./downloads/AuraOnDeviceAI-v1.0.apk) (Ready-to-use debug build)
+[**Download AuraOnDeviceAI-v1.0.apk**](https://github.com/rajureddi/AuraOnDevice-AI_HUB/releases/download/V1.0.0/auraondeivceai.apk) 
 
 
 [![Android Studio](https://img.shields.io/badge/Android%20Studio-4285F4?style=flat&logo=android%20studio&logoColor=white)](https://developer.android.com/studio)
